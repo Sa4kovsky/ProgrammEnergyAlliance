@@ -1,0 +1,1 @@
+Server=127.0.0.1;Port=5433;Database=GomelEnergyAlliance;User Id=postgres;Password=24043670;
