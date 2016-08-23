@@ -546,6 +546,24 @@ namespace Contracts
             conns.Close();
         }
 
+        public void ShowFieldsBankSearch(string address)
+        {
+            var conns = new NpgsqlConnection(connStr);
+            conns.Open();
+            //Выводим значение на экран
+            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM Bank WHERE nameBank like '%" + address + "%'", conns))
+            {
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Bankses.Add(new Banks(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString()));
+                    }
+                }
+            }
+            conns.Close();
+        }
+
         public void InsertToTableBank(string nameBank, string address)
         {
             var conns = new NpgsqlConnection(connStr);
@@ -701,6 +719,26 @@ namespace Contracts
                     while (reader.Read())
                     {
                         Customerses.Add(new Customers(Convert.ToInt32(reader[0]), reader[1].ToString(), 
+                            reader[2].ToString(), reader[3].ToString(), reader[4].ToString(),
+                            reader[5].ToString(), reader[6].ToString(), reader[7].ToString()));
+                    }
+                }
+            }
+            conns.Close();
+        }
+
+        public void ShowFieldsCustomersesSerch(string name)
+        {
+            var conns = new NpgsqlConnection(connStr);
+            conns.Open();
+            //Выводим значение на экран
+            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM Customer WHERE nameInstitution like '%" + name + "%'", conns))
+            {
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Customerses.Add(new Customers(Convert.ToInt32(reader[0]), reader[1].ToString(),
                             reader[2].ToString(), reader[3].ToString(), reader[4].ToString(),
                             reader[5].ToString(), reader[6].ToString(), reader[7].ToString()));
                     }

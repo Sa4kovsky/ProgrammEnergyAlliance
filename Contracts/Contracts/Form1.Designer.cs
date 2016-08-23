@@ -53,10 +53,10 @@
             this.buttonExecutor = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.textBox23 = new System.Windows.Forms.TextBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -153,7 +153,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1222, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,7 +182,7 @@
             this.услугиПромывкиToolStripMenuItem,
             this.услугиНакToolStripMenuItem});
             this.wORDToolStripMenuItem.Name = "wORDToolStripMenuItem";
-            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wORDToolStripMenuItem.Text = "Word";
             // 
             // оказанияУслугToolStripMenuItem
@@ -191,7 +191,7 @@
             this.оказанияУслугToolStripMenuItem1,
             this.оказанияУслугБюджетToolStripMenuItem});
             this.оказанияУслугToolStripMenuItem.Name = "оказанияУслугToolStripMenuItem";
-            this.оказанияУслугToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.оказанияУслугToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оказанияУслугToolStripMenuItem.Text = "Поверка";
             // 
             // оказанияУслугToolStripMenuItem1
@@ -214,7 +214,7 @@
             this.оказанияУслугToolStripMenuItem2,
             this.оказанияУслугБюджетToolStripMenuItem1});
             this.услугиПромывкиToolStripMenuItem.Name = "услугиПромывкиToolStripMenuItem";
-            this.услугиПромывкиToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.услугиПромывкиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.услугиПромывкиToolStripMenuItem.Text = "Промывка";
             // 
             // оказанияУслугToolStripMenuItem2
@@ -222,23 +222,25 @@
             this.оказанияУслугToolStripMenuItem2.Name = "оказанияУслугToolStripMenuItem2";
             this.оказанияУслугToolStripMenuItem2.Size = new System.Drawing.Size(242, 22);
             this.оказанияУслугToolStripMenuItem2.Text = "Оказания услуг";
+            this.оказанияУслугToolStripMenuItem2.Click += new System.EventHandler(this.оказанияУслугToolStripMenuItem2_Click);
             // 
             // оказанияУслугБюджетToolStripMenuItem1
             // 
             this.оказанияУслугБюджетToolStripMenuItem1.Name = "оказанияУслугБюджетToolStripMenuItem1";
             this.оказанияУслугБюджетToolStripMenuItem1.Size = new System.Drawing.Size(242, 22);
             this.оказанияУслугБюджетToolStripMenuItem1.Text = "Оказания услуг бюджет";
+            this.оказанияУслугБюджетToolStripMenuItem1.Click += new System.EventHandler(this.оказанияУслугБюджетToolStripMenuItem1_Click);
             // 
             // услугиНакToolStripMenuItem
             // 
             this.услугиНакToolStripMenuItem.Name = "услугиНакToolStripMenuItem";
-            this.услугиНакToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.услугиНакToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.услугиНакToolStripMenuItem.Text = "Наладка";
             // 
             // eXELToolStripMenuItem
             // 
             this.eXELToolStripMenuItem.Name = "eXELToolStripMenuItem";
-            this.eXELToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.eXELToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eXELToolStripMenuItem.Text = "Excel";
             // 
             // печатьToolStripMenuItem
@@ -369,17 +371,17 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1198, 715);
+            this.tabControl1.Size = new System.Drawing.Size(1156, 715);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.comboBox10);
             this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Controls.Add(this.monthCalendar2);
             this.tabPage1.Controls.Add(this.textBox23);
+            this.tabPage1.Controls.Add(this.comboBox10);
             this.tabPage1.Controls.Add(this.comboBox9);
             this.tabPage1.Controls.Add(this.comboBox8);
             this.tabPage1.Controls.Add(this.comboBox7);
@@ -455,23 +457,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1190, 687);
+            this.tabPage1.Size = new System.Drawing.Size(1148, 687);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "договор оказания услуг";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
-            "30 рабочих дней с момента получения аванса",
-            "20 рабочих дней с момента получения аванса",
-            "15 рабочих дней с момента получения аванса",
-            "____._________________.20___г."});
-            this.comboBox10.Location = new System.Drawing.Point(469, 489);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(124, 24);
-            this.comboBox10.TabIndex = 273;
             // 
             // monthCalendar1
             // 
@@ -497,13 +486,26 @@
             this.textBox23.Size = new System.Drawing.Size(956, 24);
             this.textBox23.TabIndex = 23;
             // 
+            // comboBox10
+            // 
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Items.AddRange(new object[] {
+            "30 рабочих дней с момента получения аванса",
+            "20 рабочих дней с момента получения аванса",
+            "15 рабочих дней с момента получения аванса",
+            "____._________________.20___г."});
+            this.comboBox10.Location = new System.Drawing.Point(469, 489);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(124, 24);
+            this.comboBox10.TabIndex = 273;
+            // 
             // comboBox9
             // 
             this.comboBox9.Enabled = false;
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(694, 429);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(410, 24);
+            this.comboBox9.Size = new System.Drawing.Size(442, 24);
             this.comboBox9.TabIndex = 15;
             this.comboBox9.DropDown += new System.EventHandler(this.comboBox9_DropDownOpened);
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
@@ -539,7 +541,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1080, 511);
+            this.button1.Location = new System.Drawing.Point(1104, 513);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 32);
@@ -598,7 +600,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(694, 399);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(410, 24);
+            this.comboBox5.Size = new System.Drawing.Size(442, 24);
             this.comboBox5.TabIndex = 12;
             this.comboBox5.DropDown += new System.EventHandler(this.comboBox5_DropDownOpened);
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
@@ -913,7 +915,7 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(549, 459);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(555, 24);
+            this.comboBox4.Size = new System.Drawing.Size(587, 24);
             this.comboBox4.TabIndex = 17;
             this.comboBox4.DropDown += new System.EventHandler(this.comboBox4_DropDownOpened);
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
@@ -1207,7 +1209,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(1140, 371);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -1284,7 +1286,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1190, 687);
+            this.tabPage2.Size = new System.Drawing.Size(1148, 687);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "договор оказания услуг бюджет";
             // 
@@ -1295,7 +1297,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1190, 687);
+            this.tabPage3.Size = new System.Drawing.Size(1148, 687);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -1307,7 +1309,7 @@
             this.treeButton.FlatAppearance.BorderSize = 0;
             this.treeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.treeButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.treeButton.Location = new System.Drawing.Point(1231, 26);
+            this.treeButton.Location = new System.Drawing.Point(1189, 26);
             this.treeButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.treeButton.Name = "treeButton";
             this.treeButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1323,7 +1325,7 @@
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Right;
             this.treeView1.FullRowSelect = true;
-            this.treeView1.Location = new System.Drawing.Point(1221, 26);
+            this.treeView1.Location = new System.Drawing.Point(1179, 26);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(10, 715);
             this.treeView1.TabIndex = 9;
@@ -1346,7 +1348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 741);
+            this.ClientSize = new System.Drawing.Size(1222, 741);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.tabControl1);
@@ -1360,7 +1362,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договора";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

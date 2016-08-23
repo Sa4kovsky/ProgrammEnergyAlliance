@@ -122,6 +122,9 @@ namespace Contracts
         #region comboBox2
         private void comboBox2_Selected(object sender, EventArgs e)
         {
+            this.comboBox2.Location = new System.Drawing.Point(992, 217);
+            this.comboBox2.Size = new System.Drawing.Size(255, 24);
+
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             Banks banks = (Banks)comboBox2.SelectedItem;           
             try
@@ -130,7 +133,7 @@ namespace Contracts
             }
             catch
             {
-            } 
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,10 +142,15 @@ namespace Contracts
 
         private void comboBox2_DropDownOpened(object sender, EventArgs e)
         {
+            string s = comboBox2.Text;
+            comboBox2.SelectedItem = null;
+            comboBox2.SelectedText = null;  
+            this.comboBox2.Location = new System.Drawing.Point(605, 217);
+            this.comboBox2.Size = new System.Drawing.Size(642, 24);
             comboBox2.DataSource = null;
             comboBox2.Items.Clear();
             connects.Bankses.Clear();
-            connects.ShowFieldsBank();
+            connects.ShowFieldsBankSearch(s);
             Financing(connects.Bankses);
         }
 
