@@ -122,9 +122,8 @@ namespace Contracts
         #region comboBox2
         private void comboBox2_Selected(object sender, EventArgs e)
         {
-            this.comboBox2.Location = new System.Drawing.Point(992, 217);
-            this.comboBox2.Size = new System.Drawing.Size(255, 24);
-
+            this.comboBox2.Location = new System.Drawing.Point(732, 214);
+            this.comboBox2.Size = new System.Drawing.Size(515, 24);
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             Banks banks = (Banks)comboBox2.SelectedItem;           
             try

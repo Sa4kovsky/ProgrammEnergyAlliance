@@ -420,7 +420,7 @@ namespace Contracts
         private void comboBox5_Selected(object sender, EventArgs e)
         {
             this.comboBox5.Location = new System.Drawing.Point(694, 399);
-            this.comboBox5.Size = new System.Drawing.Size(442, 24);
+            this.comboBox5.Size = new System.Drawing.Size(483, 24);
             comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             Customers customers = (Customers) comboBox5.SelectedItem;
             try
@@ -443,7 +443,7 @@ namespace Contracts
         {
             string s = comboBox5.Text;
             this.comboBox5.Location = new System.Drawing.Point(426, 399);
-            this.comboBox5.Size = new System.Drawing.Size(710, 24);
+            this.comboBox5.Size = new System.Drawing.Size(751, 24);
             comboBox5.DataSource = null;
             comboBox5.Items.Clear();
             connect.Customerses.Clear();
@@ -588,7 +588,7 @@ namespace Contracts
             flag++;
             if (flag == 1)
             {
-                this.textBox23.Size = new System.Drawing.Size(956, 545);
+                this.textBox23.Size = new System.Drawing.Size(1020, 545);
                 this.textBox23.Location = new System.Drawing.Point(120, 2);
                 flag++;
 
@@ -597,7 +597,7 @@ namespace Contracts
             else
             {
                 this.textBox23.Location = new System.Drawing.Point(118, 518);
-                this.textBox23.Size = new System.Drawing.Size(956, 24);
+                this.textBox23.Size = new System.Drawing.Size(1021, 24);
                 flag = 0;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -774,8 +774,8 @@ namespace Contracts
             flag1 = 0;
             monthCalendar2.Visible = false;
             monthCalendar1.Visible = false;
-       this.textBox23.Location = new System.Drawing.Point(118, 518);
-                this.textBox23.Size = new System.Drawing.Size(956, 24);
+            this.textBox23.Location = new System.Drawing.Point(118, 518);
+            this.textBox23.Size = new System.Drawing.Size(1021, 24);
             flag = 0;
 
             this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -937,7 +937,7 @@ namespace Contracts
 
         Word._Application oWord; // создаем новый экземпляр ворда
 
-        private bool chek;
+        private bool chek, chek1, chek2, chek3;
         private void оказанияУслугToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             chek = true;
@@ -1003,7 +1003,7 @@ namespace Contracts
             PerevodCost();
             oDoc.Bookmarks["СтоимостьУслуг"].Range.Text = textBox11.Text;
             oDoc.Bookmarks["СтоимостьУслугБуквами"].Range.Text = vall + " " + copp;
-            if (chek == true)
+            if (chek == true || chek1 == true || chek2 == true || chek3 == true)
             {     
                 oDoc.Bookmarks["Аванс"].Range.Text = comboBox6.Text;
                 PerevodAvans();
@@ -1050,10 +1050,11 @@ namespace Contracts
 
         private void оказанияУслугToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            chek1 = true;
             oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("e:\\Заказ\\GomelEnergyAlliance\\Shablon\\3 договор оказания услуг промывка.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\3 договор оказания услуг промывка.docx");
         }
 
         private void оказанияУслугБюджетToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1061,9 +1062,42 @@ namespace Contracts
             oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("e:\\Заказ\\GomelEnergyAlliance\\Shablon\\4 договор оказания услуг промывка бюджет.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\4 договор оказания услуг промывка бюджет.docx");
         }
 
+        private void оказанияУслугToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            chek2 = true;
+            oWord = new Word.Application();
+            oWord.Visible = true;
+            Word._Document oDoc =
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\5 договор оказания услуг наладка регулятора.docx");
+        }
+
+        private void оказанияУслугБюджетToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            oWord = new Word.Application();
+            oWord.Visible = true;
+            Word._Document oDoc =
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\6 договор оказания услуг наладка регулятора бюджет.docx");
+        }
+
+        private void оказанияУслугToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            chek3 = true;
+            oWord = new Word.Application();
+            oWord.Visible = true;
+            Word._Document oDoc =
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\8 договор оказания услуг сантехника.docx");
+        }
+
+        private void оказанияУслугБюджетToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            oWord = new Word.Application();
+            oWord.Visible = true;
+            Word._Document oDoc =
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\7 договор оказания услуг сантехника бюджет.docx");
+        }
     }
 }
 

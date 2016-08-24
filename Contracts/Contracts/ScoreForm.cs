@@ -636,7 +636,7 @@ namespace Contracts
             }
         }
 
-        private Excel.Application excelapp = new Excel.Application();
+        private Excel.Application excelapp;
         private Excel.Window excelWindow;
         private Excel.Sheets excelsheets;
         private Excel.Worksheet excelworksheet;
@@ -644,9 +644,9 @@ namespace Contracts
         private Excel.Workbook excelappworkbook;
         private void конвертироватьEXELToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        //  excelapp = new Excel.Application();
+          excelapp = new Excel.Application();
           excelapp.Visible = true;
-            excelappworkbook = excelapp.Workbooks.Open("e:\\Заказ\\GomelEnergyAlliance\\Shablon\\СФ и акт оказания услуг.xls");
+          excelappworkbook = excelapp.Workbooks.Open("d:\\GomelEnergyAlliance\\Shablon\\СФ и акт оказания услуг.xls");
 
             excelsheets = excelappworkbook.Worksheets;
             excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
@@ -794,6 +794,55 @@ namespace Contracts
             excelcells.Value2 = Convert.ToDouble(textBox10.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I13");
             excelcells.Value2 = Convert.ToDouble(textBox24.Text);
+        }
+
+        private double normTime4, poverca4, rentab4, kofNalog4, kofRashod4, mater4, kofOtchisl4, kofstrahVznos4, kofPrem4, kofZatrat4, vsegosNalog4,
+       strahVznos4, proverkaprib4, sumnalogYSN4, kofOsnZarplata4, osnZp4, pribl4, sebestoim4, polnSebestoim4, zatrats4, premia4, otchisl4, strahov4,
+       nakladn4, vsego4, itogOdnpot5;
+        private void button6_Click(object sender, EventArgs e)
+        {
+            normTime4 = Convert.ToDouble(textBox116.Text);
+            poverca4 = Convert.ToDouble(textBox115.Text);
+            rentab4 = Convert.ToDouble(textBox114.Text);
+            kofNalog4 = Convert.ToDouble(textBox113.Text);
+            kofRashod4 = Convert.ToDouble(textBox112.Text);
+            mater4 = Convert.ToDouble(textBox111.Text);
+            kofOtchisl4 = Convert.ToDouble(textBox110.Text);
+            kofstrahVznos4 = Convert.ToDouble(textBox109.Text);
+            kofPrem4 = Convert.ToDouble(textBox108.Text);
+            kofZatrat4 = Convert.ToDouble(textBox107.Text);
+            kofOsnZarplata4 = Convert.ToDouble(textBox94.Text);
+
+            osnZp4 = Money.Round((kofOsnZarplata4 * normTime4), 2);
+            textBox83.Text = osnZp4.ToString();
+            zatrats4 = Money.Round((osnZp4 * kofZatrat4 * 0.01), 2);
+            textBox79.Text = zatrats4.ToString();
+            premia4 = Money.Round((osnZp4 * kofPrem4 * 0.01), 2);
+            textBox78.Text = premia4.ToString();
+            otchisl4 = Money.Round(((osnZp4 + zatrats4 + premia4) * kofOtchisl4 * 0.01), 2);
+            textBox77.Text = otchisl4.ToString();
+            strahVznos4 = Money.Round(((osnZp4 + zatrats4 + premia4) * kofstrahVznos4), 2);
+            textBox76.Text = strahVznos4.ToString();
+            nakladn4 = Money.Round((osnZp4 * kofRashod4), 2);
+            textBox75.Text = nakladn4.ToString();
+            polnSebestoim4 = Money.Round(((osnZp4 + zatrats4 + premia4 + otchisl4 + strahVznos4 + nakladn4) + mater4), 2);
+            textBox80.Text = polnSebestoim4.ToString();
+            sebestoim4 = Money.Round((polnSebestoim4 - mater4), 2);
+            textBox81.Text = sebestoim4.ToString();
+            pribl4 = Money.Round((sebestoim4 * rentab4 / 100), 2);
+            textBox82.Text = pribl4.ToString();
+            vsego4 = Money.Round((polnSebestoim4 + pribl4 + poverca4), 2);
+            textBox74.Text = vsego4.ToString();
+            sumnalogYSN4 = Money.Round(((vsego4 * kofNalog4) / (100 - kofNalog4)), 2);
+            textBox73.Text = sumnalogYSN4.ToString();
+            vsegosNalog4 = Money.Round((vsego4 + sumnalogYSN4), 2);
+            textBox72.Text = vsegosNalog4.ToString();
+
+            int kol4 = 1;
+            itogOdnpot5 = vsegosNalog4 * kol4;
+            label123.Text = "Сумма = " + vsegosNalog4 + " * " + kol4 + " = " + itogOdnpot5;
+
+            connect.UpdateFromSum(itogOdnpot5.ToString(), id);
         }
 
 
