@@ -212,6 +212,8 @@ namespace Contracts
 
         private void comboBox3_Selected(object sender, EventArgs e)
         {
+            this.comboBox3.Location = new System.Drawing.Point(991, 100);
+            this.comboBox3.Size = new System.Drawing.Size(164, 24);
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             Customers customers = (Customers)comboBox3.SelectedItem;
             try
@@ -229,10 +231,13 @@ namespace Contracts
 
         private void comboBox3_DropDownOpened(object sender, EventArgs e)
         {
+            string s = comboBox3.Text;
+            this.comboBox3.Location = new System.Drawing.Point(691, 100);
+            this.comboBox3.Size = new System.Drawing.Size(464, 24);
             comboBox3.DataSource = null;
             comboBox3.Items.Clear();
             connect.Customerses.Clear();
-            connect.ShowFieldsCustomerses();
+            connect.ShowFieldsCustomersesSerch(s);
             Customer(connect.Customerses);
         }
 

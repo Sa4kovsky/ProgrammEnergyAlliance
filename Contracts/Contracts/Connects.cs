@@ -732,7 +732,7 @@ namespace Contracts
             var conns = new NpgsqlConnection(connStr);
             conns.Open();
             //Выводим значение на экран
-            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM Customer WHERE nameInstitution like '%" + name + "%'", conns))
+            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM Customer WHERE LegalAddress like '%" + name + "%'", conns))
             {
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -901,7 +901,7 @@ namespace Contracts
         #region ViewContractses
         public List<ViewContracts> ViewContractses = new List<ViewContracts>();
 
-        public void ShowFieldsViewContractses()
+        public void ShowFieldsViewContractses(string address)
         {
                var conns = new NpgsqlConnection(connStr);
                try
@@ -915,7 +915,7 @@ namespace Contracts
                }
      
                //Выводим значение на экран
-               using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Contracts.idContrects,Contracts.numberContrects, Contracts.signWork, Executor.nameExecutor,Executor.nameExecutors,Executor.positionExecutor,Executor.positionExecutors,Executor.actingOnTheBasis,Executor.number,Executor.date,Contracts.financing,Works.worksType, Contracts.dateStart,Contracts.dateFinish,Contracts.costServices,Contracts.prepayment,Contracts.sumPrepayment,Customer.nameInstitution,NameCustomer.nameNameCustomer,NameCustomer.nameNameCustomers,NameCustomer.positionNameCustomer,NameCustomer.positionNameCustomers,NameCustomer.actingOnTheBasis,NameCustomer.number,NameCustomer.date,Customer.LegalAddress,Contracts.addressWork,Customer.checkingAccount,Bank.nameBank,Bank.address,Customer.unp,Customer.okpo FROM Contracts,Executor,Works,Bank,Customer,NameCustomer where Contracts.idExecutor = Executor.idExecutor and Contracts.idCustomer=Customer.idCustomer and Contracts.idWorks=Works.idWorks and Contracts.idNameCustomer = NameCustomer.idNameCustomer and Customer.idBank=Bank.idBank", conns))
+               using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Contracts.idContrects,Contracts.numberContrects, Contracts.signWork, Executor.nameExecutor,Executor.nameExecutors,Executor.positionExecutor,Executor.positionExecutors,Executor.actingOnTheBasis,Executor.number,Executor.date,Contracts.financing,Works.worksType, Contracts.dateStart,Contracts.dateFinish,Contracts.costServices,Contracts.prepayment,Contracts.sumPrepayment,Customer.nameInstitution,NameCustomer.nameNameCustomer,NameCustomer.nameNameCustomers,NameCustomer.positionNameCustomer,NameCustomer.positionNameCustomers,NameCustomer.actingOnTheBasis,NameCustomer.number,NameCustomer.date,Customer.LegalAddress,Contracts.addressWork,Customer.checkingAccount,Bank.nameBank,Bank.address,Customer.unp,Customer.okpo FROM Contracts,Executor,Works,Bank,Customer,NameCustomer where Contracts.idExecutor = Executor.idExecutor and Contracts.idCustomer=Customer.idCustomer and Contracts.idWorks=Works.idWorks and Contracts.idNameCustomer = NameCustomer.idNameCustomer and Customer.idBank=Bank.idBank and  LegalAddress like '%" + address + "%'", conns))
                {
                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                    {
@@ -1202,14 +1202,14 @@ namespace Contracts
         #region     viewDateSelect
         public List<SelectDateView> SelectDateViewse = new List<SelectDateView>();
 
-        public void ShowFieldsSelectDate(int name)
+        public void ShowFieldsSelectDate(int name, string names)
         {
             var conns = new NpgsqlConnection(connStr);
             conns.Open();
             //Выводим значение на экран
             using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Contracts.idContrects, Contracts.numberContrects, Contracts.signWork, Customer.nameInstitution, Contracts.addressWork, Customer.LegalAddress, Customer.checkingAccount, Customer.unp ,Customer.okpo,Contracts.dateStart,Bank.nameBank,Bank.address,Executor.nameExecutor,Executor.positionExecutor,NameCustomer.nameNameCustomer,NameCustomer.positionNameCustomer "+
                             "FROM Contracts,Customer, Bank,Executor,NameCustomer WHERE Contracts.idCustomer = Customer.idCustomer and Contracts.idExecutor = Executor.idExecutor and Customer.idCustomer = NameCustomer.idCustomer and Customer.idBank = Bank.idBank " +
-                              " and dateStart  LIKE '%" + name + "%'", conns))
+                              " and dateStart  LIKE '%" + name + "%' and nameInstitution  LIKE '%" + names + "%'", conns))
             {
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {

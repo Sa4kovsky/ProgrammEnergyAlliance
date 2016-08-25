@@ -267,7 +267,6 @@
             this.textBox91 = new System.Windows.Forms.TextBox();
             this.textBox92 = new System.Windows.Forms.TextBox();
             this.textBox93 = new System.Windows.Forms.TextBox();
-            this.label111 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label123 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
@@ -317,6 +316,7 @@
             this.textBox114 = new System.Windows.Forms.TextBox();
             this.textBox115 = new System.Windows.Forms.TextBox();
             this.textBox116 = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -2621,16 +2621,6 @@
             this.textBox93.TabIndex = 48;
             this.textBox93.Text = "1,56";
             // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label111.Location = new System.Drawing.Point(444, 654);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(109, 32);
-            this.label111.TabIndex = 273;
-            this.label111.Text = "Итог =";
-            // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
@@ -3088,6 +3078,16 @@
             this.textBox116.Size = new System.Drawing.Size(94, 23);
             this.textBox116.TabIndex = 96;
             this.textBox116.Text = "1,56";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label111.Location = new System.Drawing.Point(444, 654);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(109, 32);
+            this.label111.TabIndex = 273;
+            this.label111.Text = "Итог =";
             // 
             // ScoreForm
             // 

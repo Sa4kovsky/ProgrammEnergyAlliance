@@ -26,7 +26,7 @@ namespace Contracts
             dataGridView1.Columns[0].Name = "№";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Name = "Банк";
-            dataGridView1.Columns[2].Name = "Адресс";
+            dataGridView1.Columns[2].Name = "МФО";
         }
 
         public void OutputTable(List<Banks> executors)

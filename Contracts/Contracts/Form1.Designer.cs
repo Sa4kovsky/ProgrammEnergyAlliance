@@ -37,16 +37,23 @@
             this.оказанияУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугБюджетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаБюджетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.услугиПромывкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугБюджетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаБюджетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.услугиНакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугБюджетToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаБюджетToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cантехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.оказанияУслугБюджетToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eXELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.подрядаБюджетToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -58,11 +65,11 @@
             this.buttonExecutor = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.textBox23 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -134,6 +141,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.treeButton = new System.Windows.Forms.Button();
@@ -173,8 +181,7 @@
             // конвертироватьToolStripMenuItem
             // 
             this.конвертироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wORDToolStripMenuItem,
-            this.eXELToolStripMenuItem});
+            this.wORDToolStripMenuItem});
             this.конвертироватьToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.конвертироватьToolStripMenuItem.Name = "конвертироватьToolStripMenuItem";
             this.конвертироватьToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
@@ -188,14 +195,16 @@
             this.услугиНакToolStripMenuItem,
             this.cантехникаToolStripMenuItem});
             this.wORDToolStripMenuItem.Name = "wORDToolStripMenuItem";
-            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wORDToolStripMenuItem.Text = "Word";
             // 
             // оказанияУслугToolStripMenuItem
             // 
             this.оказанияУслугToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оказанияУслугToolStripMenuItem1,
-            this.оказанияУслугБюджетToolStripMenuItem});
+            this.оказанияУслугБюджетToolStripMenuItem,
+            this.подрядаToolStripMenuItem,
+            this.подрядаБюджетToolStripMenuItem});
             this.оказанияУслугToolStripMenuItem.Name = "оказанияУслугToolStripMenuItem";
             this.оказанияУслугToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.оказанияУслугToolStripMenuItem.Text = "Поверка";
@@ -214,11 +223,27 @@
             this.оказанияУслугБюджетToolStripMenuItem.Text = "Оказания услуг бюджет";
             this.оказанияУслугБюджетToolStripMenuItem.Click += new System.EventHandler(this.оказанияУслугБюджетToolStripMenuItem_Click);
             // 
+            // подрядаToolStripMenuItem
+            // 
+            this.подрядаToolStripMenuItem.Name = "подрядаToolStripMenuItem";
+            this.подрядаToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.подрядаToolStripMenuItem.Text = "Подряда";
+            this.подрядаToolStripMenuItem.Click += new System.EventHandler(this.подрядаToolStripMenuItem_Click);
+            // 
+            // подрядаБюджетToolStripMenuItem
+            // 
+            this.подрядаБюджетToolStripMenuItem.Name = "подрядаБюджетToolStripMenuItem";
+            this.подрядаБюджетToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.подрядаБюджетToolStripMenuItem.Text = "Подряда бюджет";
+            this.подрядаБюджетToolStripMenuItem.Click += new System.EventHandler(this.подрядаБюджетToolStripMenuItem_Click);
+            // 
             // услугиПромывкиToolStripMenuItem
             // 
             this.услугиПромывкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оказанияУслугToolStripMenuItem2,
-            this.оказанияУслугБюджетToolStripMenuItem1});
+            this.оказанияУслугБюджетToolStripMenuItem1,
+            this.подрядаToolStripMenuItem1,
+            this.подрядаБюджетToolStripMenuItem1});
             this.услугиПромывкиToolStripMenuItem.Name = "услугиПромывкиToolStripMenuItem";
             this.услугиПромывкиToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.услугиПромывкиToolStripMenuItem.Text = "Промывка";
@@ -237,11 +262,27 @@
             this.оказанияУслугБюджетToolStripMenuItem1.Text = "Оказания услуг бюджет";
             this.оказанияУслугБюджетToolStripMenuItem1.Click += new System.EventHandler(this.оказанияУслугБюджетToolStripMenuItem1_Click);
             // 
+            // подрядаToolStripMenuItem1
+            // 
+            this.подрядаToolStripMenuItem1.Name = "подрядаToolStripMenuItem1";
+            this.подрядаToolStripMenuItem1.Size = new System.Drawing.Size(242, 22);
+            this.подрядаToolStripMenuItem1.Text = "Подряда";
+            this.подрядаToolStripMenuItem1.Click += new System.EventHandler(this.подрядаToolStripMenuItem1_Click);
+            // 
+            // подрядаБюджетToolStripMenuItem1
+            // 
+            this.подрядаБюджетToolStripMenuItem1.Name = "подрядаБюджетToolStripMenuItem1";
+            this.подрядаБюджетToolStripMenuItem1.Size = new System.Drawing.Size(242, 22);
+            this.подрядаБюджетToolStripMenuItem1.Text = "Подряда бюджет";
+            this.подрядаБюджетToolStripMenuItem1.Click += new System.EventHandler(this.подрядаБюджетToolStripMenuItem1_Click);
+            // 
             // услугиНакToolStripMenuItem
             // 
             this.услугиНакToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оказанияУслугToolStripMenuItem3,
-            this.оказанияУслугБюджетToolStripMenuItem2});
+            this.оказанияУслугБюджетToolStripMenuItem2,
+            this.подрядаToolStripMenuItem2,
+            this.подрядаБюджетToolStripMenuItem2});
             this.услугиНакToolStripMenuItem.Name = "услугиНакToolStripMenuItem";
             this.услугиНакToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.услугиНакToolStripMenuItem.Text = "Наладка";
@@ -260,11 +301,27 @@
             this.оказанияУслугБюджетToolStripMenuItem2.Text = "Оказания услуг бюджет";
             this.оказанияУслугБюджетToolStripMenuItem2.Click += new System.EventHandler(this.оказанияУслугБюджетToolStripMenuItem2_Click);
             // 
+            // подрядаToolStripMenuItem2
+            // 
+            this.подрядаToolStripMenuItem2.Name = "подрядаToolStripMenuItem2";
+            this.подрядаToolStripMenuItem2.Size = new System.Drawing.Size(242, 22);
+            this.подрядаToolStripMenuItem2.Text = "Подряда";
+            this.подрядаToolStripMenuItem2.Click += new System.EventHandler(this.подрядаToolStripMenuItem2_Click);
+            // 
+            // подрядаБюджетToolStripMenuItem2
+            // 
+            this.подрядаБюджетToolStripMenuItem2.Name = "подрядаБюджетToolStripMenuItem2";
+            this.подрядаБюджетToolStripMenuItem2.Size = new System.Drawing.Size(242, 22);
+            this.подрядаБюджетToolStripMenuItem2.Text = "Подряда бюджет";
+            this.подрядаБюджетToolStripMenuItem2.Click += new System.EventHandler(this.подрядаБюджетToolStripMenuItem2_Click);
+            // 
             // cантехникаToolStripMenuItem
             // 
             this.cантехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оказанияУслугToolStripMenuItem4,
-            this.оказанияУслугБюджетToolStripMenuItem3});
+            this.оказанияУслугБюджетToolStripMenuItem3,
+            this.подрядаToolStripMenuItem3,
+            this.подрядаБюджетToolStripMenuItem3});
             this.cантехникаToolStripMenuItem.Name = "cантехникаToolStripMenuItem";
             this.cантехникаToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.cантехникаToolStripMenuItem.Text = "Cантехника";
@@ -283,11 +340,19 @@
             this.оказанияУслугБюджетToolStripMenuItem3.Text = "Оказания услуг бюджет";
             this.оказанияУслугБюджетToolStripMenuItem3.Click += new System.EventHandler(this.оказанияУслугБюджетToolStripMenuItem3_Click);
             // 
-            // eXELToolStripMenuItem
+            // подрядаToolStripMenuItem3
             // 
-            this.eXELToolStripMenuItem.Name = "eXELToolStripMenuItem";
-            this.eXELToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.eXELToolStripMenuItem.Text = "Excel";
+            this.подрядаToolStripMenuItem3.Name = "подрядаToolStripMenuItem3";
+            this.подрядаToolStripMenuItem3.Size = new System.Drawing.Size(242, 22);
+            this.подрядаToolStripMenuItem3.Text = "Подряда";
+            this.подрядаToolStripMenuItem3.Click += new System.EventHandler(this.подрядаToolStripMenuItem3_Click);
+            // 
+            // подрядаБюджетToolStripMenuItem3
+            // 
+            this.подрядаБюджетToolStripMenuItem3.Name = "подрядаБюджетToolStripMenuItem3";
+            this.подрядаБюджетToolStripMenuItem3.Size = new System.Drawing.Size(242, 22);
+            this.подрядаБюджетToolStripMenuItem3.Text = "Подряда бюджет";
+            this.подрядаБюджетToolStripMenuItem3.Click += new System.EventHandler(this.подрядаБюджетToolStripMenuItem3_Click);
             // 
             // печатьToolStripMenuItem
             // 
@@ -329,9 +394,10 @@
             this.panelMenu.Location = new System.Drawing.Point(32, 26);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(156, 733);
+            this.panelMenu.Size = new System.Drawing.Size(155, 733);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Visible = false;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // button7
             // 
@@ -400,7 +466,7 @@
             this.buttonExecutor.Name = "buttonExecutor";
             this.buttonExecutor.Size = new System.Drawing.Size(146, 46);
             this.buttonExecutor.TabIndex = 0;
-            this.buttonExecutor.Text = "Исполнители";
+            this.buttonExecutor.Text = "Кто подписывает";
             this.buttonExecutor.UseVisualStyleBackColor = true;
             this.buttonExecutor.Click += new System.EventHandler(this.buttonExecutor_Click);
             // 
@@ -424,11 +490,11 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Controls.Add(this.monthCalendar2);
             this.tabPage1.Controls.Add(this.textBox23);
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Controls.Add(this.comboBox10);
-            this.tabPage1.Controls.Add(this.comboBox9);
             this.tabPage1.Controls.Add(this.comboBox8);
             this.tabPage1.Controls.Add(this.comboBox7);
             this.tabPage1.Controls.Add(this.button1);
@@ -500,6 +566,7 @@
             this.tabPage1.Controls.Add(this.comboBox6);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.textBox10);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -507,14 +574,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "договор оказания услуг";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(135, 520);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 266;
-            this.monthCalendar1.Visible = false;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // monthCalendar2
             // 
@@ -526,11 +585,29 @@
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(118, 518);
+            this.textBox23.Location = new System.Drawing.Point(434, 518);
             this.textBox23.Multiline = true;
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(1021, 24);
+            this.textBox23.Size = new System.Drawing.Size(705, 24);
             this.textBox23.TabIndex = 23;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(1145, 429);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(31, 23);
+            this.button8.TabIndex = 275;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(135, 520);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 266;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // comboBox10
             // 
@@ -544,18 +621,6 @@
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(124, 24);
             this.comboBox10.TabIndex = 273;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.Enabled = false;
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(694, 429);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(483, 24);
-            this.comboBox9.TabIndex = 15;
-            this.comboBox9.DropDown += new System.EventHandler(this.comboBox9_DropDownOpened);
-            this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
-            this.comboBox9.DropDownClosed += new System.EventHandler(this.comboBox9_Selected);
             // 
             // comboBox8
             // 
@@ -809,7 +874,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(11, 521);
+            this.label24.Location = new System.Drawing.Point(327, 521);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(101, 16);
             this.label24.TabIndex = 247;
@@ -943,9 +1008,9 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(1120, 489);
+            this.textBox13.Location = new System.Drawing.Point(121, 518);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(57, 23);
+            this.textBox13.Size = new System.Drawing.Size(200, 23);
             this.textBox13.TabIndex = 22;
             // 
             // textBox11
@@ -995,7 +1060,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(1010, 492);
+            this.label22.Location = new System.Drawing.Point(11, 521);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(104, 16);
             this.label22.TabIndex = 221;
@@ -1298,10 +1363,10 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
             "от стоимости услуг",
-            "от стоимости материалов"});
+            "от стоимости работ"});
             this.comboBox6.Location = new System.Drawing.Point(912, 489);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(92, 24);
+            this.comboBox6.Size = new System.Drawing.Size(264, 24);
             this.comboBox6.TabIndex = 21;
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
@@ -1329,6 +1394,13 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(694, 429);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(445, 23);
+            this.textBox10.TabIndex = 274;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -1336,7 +1408,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1148, 679);
+            this.tabPage2.Size = new System.Drawing.Size(1190, 679);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "договор оказания услуг бюджет";
             // 
@@ -1347,7 +1419,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1148, 679);
+            this.tabPage3.Size = new System.Drawing.Size(1190, 679);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -1433,7 +1505,6 @@
         private System.Windows.Forms.ToolStripMenuItem connectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem конвертироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wORDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eXELToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
         private System.Windows.Forms.Button Menu;
         private System.Windows.Forms.Panel panelMenu;
@@ -1520,7 +1591,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -1540,6 +1610,16 @@
         private System.Windows.Forms.ToolStripMenuItem cантехникаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оказанияУслугToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem оказанияУслугБюджетToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem подрядаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подрядаБюджетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подрядаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem подрядаБюджетToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem подрядаToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem подрядаБюджетToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem подрядаToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem подрядаБюджетToolStripMenuItem3;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox10;
 
 
 

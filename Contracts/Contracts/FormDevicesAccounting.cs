@@ -99,7 +99,7 @@ namespace Contracts
             flag1++;
             if (flag1 == 1)
             {
-                this.textBox8.Size = new System.Drawing.Size(1290, 512);
+                this.textBox8.Size = new System.Drawing.Size(1020, 537);
                 this.textBox8.Location = new System.Drawing.Point(22, 22);
                 flag1++;
 
@@ -107,8 +107,8 @@ namespace Contracts
             }
             else
             {
-                this.textBox8.Size = new System.Drawing.Size(175, 22);
-                this.textBox8.Location = new System.Drawing.Point(1137, 510);
+                this.textBox8.Location = new System.Drawing.Point(426, 537);
+                this.textBox8.Size = new System.Drawing.Size(614, 22);
                 flag1 = 0;
 
                 this.button2.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -136,8 +136,8 @@ namespace Contracts
 
         private void FormDevicesAccounting_Load(object sender, EventArgs e)
         {
-            this.textBox8.Size = new System.Drawing.Size(175, 22);
-            this.textBox8.Location = new System.Drawing.Point(1137, 513);
+            this.textBox8.Location = new System.Drawing.Point(426, 537);
+            this.textBox8.Size = new System.Drawing.Size(614, 22);
             flag1 = 0;
             this.button2.Cursor = System.Windows.Forms.Cursors.PanNorth;
             flag2 = 0;

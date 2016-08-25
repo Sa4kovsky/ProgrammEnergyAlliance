@@ -301,16 +301,16 @@ namespace Contracts
             flag++;
             if (flag == 1)
             {
-                this.textBox4.Size = new System.Drawing.Size(417, 123);
-                this.textBox4.Location = new System.Drawing.Point(792, 59);
+                this.textBox4.Size = new System.Drawing.Size(717, 123);
+                this.textBox4.Location = new System.Drawing.Point(492, 59);
                 flag++;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanSouth;
             }
             else
             {
-                this.textBox4.Size = new System.Drawing.Size(217, 23);
-                this.textBox4.Location = new System.Drawing.Point(992, 159);
+                this.textBox4.Location = new System.Drawing.Point(732, 156);
+                this.textBox4.Size = new System.Drawing.Size(477, 23);
                 flag = 0;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -333,7 +333,7 @@ namespace Contracts
         {
             if (textBox5.TextLength > 13)
             {
-                MessageBox.Show("А по рукам!!! Объяснительную мигом !!! Не больше 9 знаков, пожалуйста.");
+                MessageBox.Show("А по рукам!!! Объяснительную мигом !!! Не больше 13 знаков, пожалуйста.");
                 textBox5.BackColor = Color.DarkRed;
             }
             else

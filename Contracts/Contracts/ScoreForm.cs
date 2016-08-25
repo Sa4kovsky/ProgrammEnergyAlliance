@@ -134,11 +134,12 @@ namespace Contracts
 
         private void comboBox2_DropDownOpened(object sender, EventArgs e)
         {
+            string s = comboBox2.Text;
             name = Convert.ToInt32(numericUpDown1.Text);
             comboBox2.DataSource = null;
             comboBox2.Items.Clear();
             connect.SelectDateViewse.Clear();
-            connect.ShowFieldsSelectDate(name);
+            connect.ShowFieldsSelectDate(name,s);
             SelectViewDate(connect.SelectDateViewse);
         }
 
@@ -176,11 +177,12 @@ namespace Contracts
 
         private void comboBox1_DropDownOpened(object sender, EventArgs e)
         {
+            string s = comboBox1.Text;
             name1 = Convert.ToInt32(numericUpDown2.Text);
             comboBox1.DataSource = null;
             comboBox1.Items.Clear();
             connect.SelectDateViewse.Clear();
-            connect.ShowFieldsSelectDate(name1);
+            connect.ShowFieldsSelectDate(name1,s);
             SelectViewDate2(connect.SelectDateViewse);
         }
 
@@ -320,32 +322,9 @@ namespace Contracts
             }
         }
 
-        private double normTime,
-            poverca,
-            rentab,
-            kofNalog,
-            kofRashod,
-            mater,
-            kofOtchisl,
-            kofstrahVznos,
-            kofPrem,
-            kofZatrat,
-            vsegosNalog,
-            strahVznos,
-            proverkaprib,
-            sumnalogYSN,
-            kofOsnZarplata,
-            osnZp,
-            pribl,
-            sebestoim,
-            polnSebestoim,
-            zatrats,
-            premia,
-            otchisl,
-            strahov,
-            nakladn,
-            vsego,
-            itogOdnpot;
+        private double normTime,poverca,rentab,kofNalog,kofRashod,mater,kofOtchisl,kofstrahVznos,kofPrem,kofZatrat,vsegosNalog,
+            strahVznos,proverkaprib,sumnalogYSN,kofOsnZarplata,osnZp,pribl,sebestoim,polnSebestoim,zatrats,premia,otchisl,strahov,
+            nakladn,vsego,itogOdnpot;
 
         public double itogOdnpot4;
 
