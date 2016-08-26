@@ -61,14 +61,15 @@ namespace Contracts
         private string nameBank;
         private string address;
         private int id;
+
         private void InsertExecutor_Click(object sender, System.EventArgs e)
         {
-                connects.Bankses.Clear();
-                nameBank = textBox1.Text;
-                address = textBox2.Text;
-                connects.InsertToTableBank(nameBank, address);
-                connects.ShowFieldsBank();
-                OutputTable(connects.Bankses);
+            connects.Bankses.Clear();
+            nameBank = textBox1.Text;
+            address = textBox2.Text;
+            connects.InsertToTableBank(nameBank, address);
+            connects.ShowFieldsBank();
+            OutputTable(connects.Bankses);
         }
 
         private void UpdateExecutor_Click(object sender, System.EventArgs e)
@@ -87,13 +88,33 @@ namespace Contracts
                 else
                 {
                     textBox2.BackColor = Color.White;
-                    connects.Bankses.Clear();
-                    id = Convert.ToInt32(Id.Text);
-                    nameBank = textBox1.Text;
-                    address = textBox2.Text;
-                    connects.UpdateFromTableBank(id, nameBank, address);
-                    connects.ShowFieldsBank();
-                    OutputTable(connects.Bankses);
+                    DialogResult result =
+                        MessageBox.Show("Редактирование наименованиия банка приведет к смене наименования" +
+                                        "банка у всех заказчиков. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ?",
+                            "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        DialogResult results =
+                            MessageBox.Show("Данную процедуру нельзя будет отменить. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ?",
+                                "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (results == DialogResult.Yes)
+                        {
+                            DialogResult resultss =
+                                MessageBox.Show(
+                                    "Вы измените название данного банка у ВСЕХ заказчиков. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ",
+                                    "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (results == DialogResult.Yes)
+                            {
+                                connects.Bankses.Clear();
+                            }
+                            id = Convert.ToInt32(Id.Text);
+                            nameBank = textBox1.Text;
+                            address = textBox2.Text;
+                            connects.UpdateFromTableBank(id, nameBank, address);
+                            connects.ShowFieldsBank();
+                            OutputTable(connects.Bankses);
+                        }
+                    }
                 }
             }
         }
@@ -106,11 +127,17 @@ namespace Contracts
             }
             else
             {
-                connects.Bankses.Clear();
-                id = Convert.ToInt32(Id.Text);
-                connects.DeleteFromTableBank(id);
-                connects.ShowFieldsBank();
-                OutputTable(connects.Bankses);
+                 DialogResult result =
+                        MessageBox.Show("Удалить банк невозможно, так как это приведет к удалению данного банка у всех заказчиков.",
+                            "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    connects.Bankses.Clear();
+                    id = Convert.ToInt32(Id.Text);
+                    connects.DeleteFromTableBank(id);
+                    connects.ShowFieldsBank();
+                    OutputTable(connects.Bankses);
+                }
             }
         }
 

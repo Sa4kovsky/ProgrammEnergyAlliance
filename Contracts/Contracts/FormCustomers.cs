@@ -305,7 +305,7 @@ namespace Contracts
                 this.textBox4.Location = new System.Drawing.Point(492, 59);
                 flag++;
 
-                this.button1.Cursor = System.Windows.Forms.Cursors.PanSouth;
+                this.button3.Cursor = System.Windows.Forms.Cursors.PanSouth;
             }
             else
             {
@@ -313,7 +313,7 @@ namespace Contracts
                 this.textBox4.Size = new System.Drawing.Size(477, 23);
                 flag = 0;
 
-                this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
+                this.button3.Cursor = System.Windows.Forms.Cursors.PanNorth;
             }
         }
 
@@ -339,6 +339,28 @@ namespace Contracts
             else
             {
                 textBox5.BackColor = Color.White;
+            }
+        }
+
+        private int flag1;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            flag1++;
+            if (flag1 == 1)
+            {
+                this.textBox1.Location = new System.Drawing.Point(532, 18);
+                this.textBox1.Size = new System.Drawing.Size(677, 103);
+                flag1++;
+
+                this.button4.Cursor = System.Windows.Forms.Cursors.PanSouth;
+            }
+            else
+            {
+                this.textBox1.Location = new System.Drawing.Point(732, 98);
+                this.textBox1.Size = new System.Drawing.Size(477, 23);
+                flag1 = 0;
+
+                this.button4.Cursor = System.Windows.Forms.Cursors.PanNorth;
             }
         }
     }

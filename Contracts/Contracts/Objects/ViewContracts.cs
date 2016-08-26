@@ -35,6 +35,10 @@ namespace Contracts.Objects
         private string mfo;
         private string unp;
         private string okpo;
+        private int idExecutor;
+        private int idCustom;
+        private int idNameCustom;
+        private int idWork;
 
         public ViewContracts(int idContrects,string numberContrects,string signWork,string nameExecutor,
          string nameExecutors,string positionExecutor,string positionExecutors,string actingOnTheBasis,string number,
@@ -42,7 +46,7 @@ namespace Contracts.Objects
          string prepayment,string sumPrepayment,string nameInstitution,string nameNameCustomer,string nameNameCustomers,
          string positionNameCustomer,string positionNameCustomers,string actingOnTheBasisCustomer,string numberCustomer,
          string dateCustomer,string legalAddress,string addressWork,string checkingAccount,string nameBank,string mfo,
-         string unp,string okpo)
+         string unp, string okpo, int idExecutor, int idCustom, int idNameCustom, int idWork)
         {
             this.idContrects = idContrects;
             this.numberContrects = numberContrects;
@@ -76,6 +80,32 @@ namespace Contracts.Objects
             this.mfo = mfo;
             this.unp = unp;
             this.okpo = okpo;
+            this.idExecutor = idExecutor;
+            this.idCustom = idCustom;
+            this.idNameCustom = idNameCustom;
+            this.idWork = idWork;
+        }
+
+        public int IdExecutor
+        {
+            get { return idExecutor; }
+            set { idExecutor = value; }
+        }
+
+        public int IdCustom
+        {
+            get { return idCustom; }
+            set { idCustom = value; }
+        }
+        public int IdNameCustom
+        {
+            get { return idNameCustom; }
+            set { idNameCustom = value; }
+        }
+        public int IdWork
+        {
+            get { return idWork; }
+            set { idWork = value; }
         }
 
         public int IdContrects

@@ -18,7 +18,7 @@ namespace Contracts
 
         public void InitTable()
         {
-            dataGridView1.ColumnCount = 32;
+            dataGridView1.ColumnCount = 36;
             dataGridView1.Columns[0].Width = 50;
             dataGridView1.Columns[1].Width = 90;
             dataGridView1.Columns[2].Width = 90;
@@ -51,6 +51,10 @@ namespace Contracts
             dataGridView1.Columns[29].Width = 100;
             dataGridView1.Columns[30].Width = 100;
             dataGridView1.Columns[31].Width = 100;
+            dataGridView1.Columns[32].Width = 100;
+            dataGridView1.Columns[33].Width = 100;
+            dataGridView1.Columns[34].Width = 100;
+            dataGridView1.Columns[35].Width = 100;
 
             dataGridView1.RowHeadersVisible = false;
 
@@ -110,6 +114,10 @@ namespace Contracts
             dataGridView1.Columns[30].Visible = false;
             dataGridView1.Columns[31].Name = "ОКПО";
             dataGridView1.Columns[31].Visible = false;
+            dataGridView1.Columns[32].Visible = false;
+            dataGridView1.Columns[33].Visible = false;
+            dataGridView1.Columns[34].Visible = false;
+            dataGridView1.Columns[35].Visible = false;
         }
 
         public void OutputTable(List<ViewContracts> viewContracts)
@@ -149,6 +157,10 @@ namespace Contracts
                 dataGridView1[29, i].Value = viewContracts[i].Mfo;
                 dataGridView1[30, i].Value = viewContracts[i].Unp;
                 dataGridView1[31, i].Value = viewContracts[i].Okpo;
+                dataGridView1[32, i].Value = viewContracts[i].IdExecutor;
+                dataGridView1[33, i].Value = viewContracts[i].IdCustom;
+                dataGridView1[34, i].Value = viewContracts[i].IdNameCustom;
+                dataGridView1[35, i].Value = viewContracts[i].IdWork;
             }
             dataGridView1.ClearSelection();
         }
@@ -328,11 +340,19 @@ namespace Contracts
                 if (row.Cells[30].Value != null)
                     textBox27.Text = row.Cells[30].Value.ToString();
                 if (row.Cells[31].Value != null)
-                    textBox2.Text = row.Cells[31].Value.ToString();
+                    textBox2.Text = row.Cells[32].Value.ToString();
+                if (row.Cells[31].Value != null)
+                    label15.Text = row.Cells[32].Value.ToString();
+                if (row.Cells[33].Value != null)
+                    label32.Text = row.Cells[33].Value.ToString();
+                if (row.Cells[34].Value != null)
+                    label38.Text = row.Cells[34].Value.ToString();
+                if (row.Cells[35].Value != null)
+                    label39.Text = row.Cells[35].Value.ToString();
             }
         }
 
-        private int executorid, customersId, IdnameCustomer, worksId, numberContrects, id;
+        private int numberContrects, id;
         string signWork, financing, dateStart, dateFinish, costServices, prepayment, sumPrepayment, addressWork;
 
         #region combobox2
@@ -343,7 +363,7 @@ namespace Contracts
             Executor executor = (Executor) comboBox2.SelectedItem;
             try
             {
-                executorid = executor.IdExecutor;
+                label15.Text = Convert.ToString(executor.IdExecutor);
             }
             catch
             {
@@ -376,11 +396,13 @@ namespace Contracts
 
         private void comboBox4_Selected(object sender, EventArgs e)
         {
+            this.comboBox4.Location = new System.Drawing.Point(549, 459);
+            this.comboBox4.Size = new System.Drawing.Size(628, 24);
             comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             Works works = (Works) comboBox4.SelectedItem;
             try
             {
-                worksId = works.IdWorks;
+                label39.Text = Convert.ToString(works.IdWorks);
             }
             catch
             {
@@ -393,6 +415,8 @@ namespace Contracts
 
         private void comboBox4_DropDownOpened(object sender, EventArgs e)
         {
+            this.comboBox4.Location = new System.Drawing.Point(149, 459);
+            this.comboBox4.Size = new System.Drawing.Size(1028, 24);
             comboBox4.DataSource = null;
             comboBox4.Items.Clear();
             connect.Works.Clear();
@@ -420,8 +444,8 @@ namespace Contracts
             comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             Customers customers = (Customers) comboBox5.SelectedItem;
             try
-            {
-                customersId = customers.IdCustomer;
+            {                
+                label32.Text = Convert.ToString(customers.IdCustomer);
                 name = customers.IdCustomer;
                 textBox10.Text = customers.LegalAddress;
                 textBox23.Text = customers.AddressWork;
@@ -468,7 +492,7 @@ namespace Contracts
             NameCustomerSelect nameCustomerSelect = (NameCustomerSelect) comboBox7.SelectedItem;
             try
             {
-                IdnameCustomer = nameCustomerSelect.Id;
+                label38.Text = Convert.ToString(nameCustomerSelect.Id);
                 comboBox8.Text = nameCustomerSelect.PositionNameCustomer;
             }
             catch
@@ -507,7 +531,7 @@ namespace Contracts
             NameCustomerSelect nameCustomerSelect = (NameCustomerSelect) comboBox8.SelectedItem;
             try
             {
-                IdnameCustomer = nameCustomerSelect.Id;
+                label38.Text = Convert.ToString(nameCustomerSelect.Id);
                 comboBox7.Text = nameCustomerSelect.Name;
             }
             catch
@@ -570,8 +594,8 @@ namespace Contracts
             prepayment = comboBox6.Text;
             sumPrepayment = textBox13.Text;
             addressWork = textBox23.Text;
-            connect.InsertToTableViewContractses(numberContrects, signWork, executorid, customersId, IdnameCustomer,
-                financing, worksId,
+            connect.InsertToTableViewContractses(numberContrects, signWork, Convert.ToInt32(label15.Text), Convert.ToInt32(label32.Text), Convert.ToInt32(label38.Text),
+                financing, Convert.ToInt32(label39.Text),
                 dateStart, dateFinish, costServices, prepayment, sumPrepayment, addressWork);
 
             connect.ShowFieldsViewContractses(names);
@@ -599,8 +623,8 @@ namespace Contracts
                 prepayment = comboBox6.Text;
                 sumPrepayment = textBox13.Text;
                 addressWork = textBox23.Text;
-                connect.UpdateFromTableViewContractses(id, numberContrects, signWork, executorid, customersId,
-                    IdnameCustomer, financing, worksId,
+                connect.UpdateFromTableViewContractses(id, numberContrects, signWork, Convert.ToInt32(label15.Text), Convert.ToInt32(label32.Text),
+                    Convert.ToInt32(label38.Text), financing, Convert.ToInt32(label39.Text),
                     dateStart, dateFinish, costServices, prepayment, sumPrepayment, addressWork);
 
                 connect.ShowFieldsViewContractses(names);
@@ -616,11 +640,17 @@ namespace Contracts
             }
             else
             {
-                connect.ViewContractses.Clear();
-                id = Convert.ToInt32(label16.Text);
-                connect.DeleteFromTableViewContractses(id);
-                connect.ShowFieldsViewContractses(names);
-                OutputTable(connect.ViewContractses);
+              DialogResult result =
+                        MessageBox.Show("Вы точно хотите удалить договор.",
+                            "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    connect.ViewContractses.Clear();
+                    id = Convert.ToInt32(label16.Text);
+                    connect.DeleteFromTableViewContractses(id);
+                    connect.ShowFieldsViewContractses(names);
+                    OutputTable(connect.ViewContractses);
+                }
             }
         }
 
@@ -635,7 +665,7 @@ namespace Contracts
             {
                 textBox1.BackColor = Color.Brown;
             }
-            if (Convert.ToString(executorid) != "0")
+            if (Convert.ToString(label15) != "0")
             {
                 comboBox2.BackColor = Color.White;
             }
@@ -643,7 +673,7 @@ namespace Contracts
             {
                 comboBox2.BackColor = Color.Brown;
             }
-            if (Convert.ToString(customersId) != "0")
+            if (Convert.ToString(label32) != "0")
             {
                 comboBox5.BackColor = Color.White;
             }
@@ -651,7 +681,7 @@ namespace Contracts
             {
                 comboBox5.BackColor = Color.Brown;
             }
-            if (Convert.ToString(IdnameCustomer) != "0")
+            if (Convert.ToString(label38) != "0")
             {
                 comboBox7.BackColor = Color.White;
             }
@@ -659,7 +689,7 @@ namespace Contracts
             {
                 comboBox7.BackColor = Color.Brown;
             }
-            if (Convert.ToString(worksId) != "0")
+            if (Convert.ToString(label39) != "0")
             {
                 comboBox4.BackColor = Color.White;
             }
@@ -711,7 +741,7 @@ namespace Contracts
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox6.Text == "от стоимости услуг")
+            if (comboBox6.Text == "от стоимости услуг" || comboBox6.Text == "от стоимости работ")
             {
                 textBox13.Text = "50% ";
             }
@@ -815,7 +845,7 @@ namespace Contracts
         private double avans;
         void PerevodAvans()
         {
-            if (comboBox6.Text == "от стоимости услуг")
+            if (comboBox6.Text == "от стоимости услуг" || comboBox6.Text == "от стоимости работ")
             {
                 if (textBox13.Text.Length == 0) return;
                 double cost = Convert.ToDouble(textBox11.Text);
@@ -888,7 +918,7 @@ namespace Contracts
             OutputTable(connect.ViewContractses);
         }
 
-        Word._Application oWord = new Word.Application(); // создаем новый экземпляр ворда
+        private Word._Application oWord; // создаем новый экземпляр ворда
 
         private bool chek = false, chek1 = false, chek2 = false, chek3 = false, chek5 = false, chek6 = false, chek7 = false, chek8 = false;
         private void оказанияУслугToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -963,6 +993,14 @@ namespace Contracts
                 oDoc.Bookmarks["АвансСумма"].Range.Text = avans.ToString();
                 oDoc.Bookmarks["ПроцентАванса"].Range.Text = textBox13.Text;
                 oDoc.Bookmarks["АвансСуммаБуква"].Range.Text = vall + " " + copp;
+                chek = false;
+                chek1 = false; 
+                chek2 = false;
+                chek3 = false;
+                chek5 = false;
+                chek6 = false;
+                chek7 = false; 
+                chek8 = false;
             }
             oDoc.Bookmarks["УчереждениеЗаказчик"].Range.Text = comboBox5.Text;
             oDoc.Bookmarks["ЮрАдрес"].Range.Text = textBox10.Text;
@@ -1055,69 +1093,69 @@ namespace Contracts
         private void подрядаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             chek8 = true;
-          //  oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\1 договор подряда поверка.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\1 договор подряда поверка.docx");
         }
 
         private void подрядаБюджетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\2 договор подряда поверка бюджет.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\2 договор подряда поверка бюджет.docx");
         }
 
         private void подрядаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             chek7 = true;
-         //   oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\3 договор подряда промывка.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\3 договор подряда промывка.docx");
         }
 
         private void подрядаБюджетToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-         //   oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\4 договор подряда промывка бюджет.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\4 договор подряда промывка бюджет.docx");
         }
 
         private void подрядаToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             chek6 = true;
-           // oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\5 договор подряда наладка регулятора.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\5 договор подряда наладка регулятора.docx");
         }
 
         private void подрядаБюджетToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-           // oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\6 договор подряда наладка регулятора бюджет.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\6 договор подряда наладка регулятора бюджет.docx");
         }
 
         private void подрядаToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             chek5 = true;
-          //  oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\8 договор подряда сантехника.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\8 договор подряда сантехника.docx");
         }
 
         private void подрядаБюджетToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-          //  oWord = new Word.Application();
+            oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
-                    GetDoc("d:\\GomelEnergyAlliance\\7 договор оказания услуг сантехника бюджет.docx");
+                    GetDoc("d:\\GomelEnergyAlliance\\Shablon\\7 договор оказания услуг сантехника бюджет.docx");
         }
 
         private string names;
@@ -1131,7 +1169,7 @@ namespace Contracts
             Customers customers = (Customers)textBox10.Container;
             try
             {
-                customersId = customers.IdCustomer;
+                label32.Text = Convert.ToString(customers.IdCustomer);
                 name = customers.IdCustomer;
                 //    comboBox9.Text = customers.LegalAddress;
                 textBox23.Text = customers.AddressWork;
@@ -1139,11 +1177,6 @@ namespace Contracts
             catch
             {
             }
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -65,6 +65,10 @@
             this.buttonExecutor = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -195,7 +199,7 @@
             this.услугиНакToolStripMenuItem,
             this.cантехникаToolStripMenuItem});
             this.wORDToolStripMenuItem.Name = "wORDToolStripMenuItem";
-            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.wORDToolStripMenuItem.Text = "Word";
             // 
             // оказанияУслугToolStripMenuItem
@@ -397,7 +401,6 @@
             this.panelMenu.Size = new System.Drawing.Size(155, 733);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Visible = false;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // button7
             // 
@@ -490,6 +493,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.label39);
+            this.tabPage1.Controls.Add(this.label38);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.monthCalendar2);
             this.tabPage1.Controls.Add(this.textBox23);
             this.tabPage1.Controls.Add(this.button8);
@@ -574,6 +581,46 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "договор оказания услуг";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(1020, 340);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 16);
+            this.label39.TabIndex = 279;
+            this.label39.Text = "label39";
+            this.label39.Visible = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(948, 342);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(54, 16);
+            this.label38.TabIndex = 278;
+            this.label38.Text = "label38";
+            this.label38.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(871, 342);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(54, 16);
+            this.label32.TabIndex = 277;
+            this.label32.Text = "label32";
+            this.label32.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(792, 340);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 16);
+            this.label15.TabIndex = 276;
+            this.label15.Text = "label15";
+            this.label15.Visible = false;
             // 
             // monthCalendar2
             // 
@@ -1363,7 +1410,8 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
             "от стоимости услуг",
-            "от стоимости работ"});
+            "от стоимости работ",
+            "от стоимости материалов"});
             this.comboBox6.Location = new System.Drawing.Point(912, 489);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(264, 24);
@@ -1620,6 +1668,10 @@
         private System.Windows.Forms.ToolStripMenuItem подрядаБюджетToolStripMenuItem3;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label15;
 
 
 

@@ -629,8 +629,7 @@ namespace Contracts
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка, при выполнении запроса на удаление записи");
-                    MessageBox.Show("Возможно запись уже удалена");
+                    MessageBox.Show("Ошибка, удаление банка невозможно, так какк это приведет к удалению данного банка у всех заказчиков");
                 }
             }
 
@@ -915,7 +914,7 @@ namespace Contracts
                }
      
                //Выводим значение на экран
-               using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Contracts.idContrects,Contracts.numberContrects, Contracts.signWork, Executor.nameExecutor,Executor.nameExecutors,Executor.positionExecutor,Executor.positionExecutors,Executor.actingOnTheBasis,Executor.number,Executor.date,Contracts.financing,Works.worksType, Contracts.dateStart,Contracts.dateFinish,Contracts.costServices,Contracts.prepayment,Contracts.sumPrepayment,Customer.nameInstitution,NameCustomer.nameNameCustomer,NameCustomer.nameNameCustomers,NameCustomer.positionNameCustomer,NameCustomer.positionNameCustomers,NameCustomer.actingOnTheBasis,NameCustomer.number,NameCustomer.date,Customer.LegalAddress,Contracts.addressWork,Customer.checkingAccount,Bank.nameBank,Bank.address,Customer.unp,Customer.okpo FROM Contracts,Executor,Works,Bank,Customer,NameCustomer where Contracts.idExecutor = Executor.idExecutor and Contracts.idCustomer=Customer.idCustomer and Contracts.idWorks=Works.idWorks and Contracts.idNameCustomer = NameCustomer.idNameCustomer and Customer.idBank=Bank.idBank and  LegalAddress like '%" + address + "%'", conns))
+               using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Contracts.idContrects,Contracts.numberContrects, Contracts.signWork, Executor.nameExecutor,Executor.nameExecutors,Executor.positionExecutor,Executor.positionExecutors,Executor.actingOnTheBasis,Executor.number,Executor.date,Contracts.financing,Works.worksType, Contracts.dateStart,Contracts.dateFinish,Contracts.costServices,Contracts.prepayment,Contracts.sumPrepayment,Customer.nameInstitution,NameCustomer.nameNameCustomer,NameCustomer.nameNameCustomers,NameCustomer.positionNameCustomer,NameCustomer.positionNameCustomers,NameCustomer.actingOnTheBasis,NameCustomer.number,NameCustomer.date,Customer.LegalAddress,Contracts.addressWork,Customer.checkingAccount,Bank.nameBank,Bank.address,Customer.unp,Customer.okpo,Executor.idExecutor,Customer.idCustomer,NameCustomer.idNameCustomer,Works.idWorks FROM Contracts,Executor,Works,Bank,Customer,NameCustomer where Contracts.idExecutor = Executor.idExecutor and Contracts.idCustomer=Customer.idCustomer and Contracts.idWorks=Works.idWorks and Contracts.idNameCustomer = NameCustomer.idNameCustomer and Customer.idBank=Bank.idBank and  LegalAddress like upper('%" + address + "%')", conns))
                {
                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                    {
@@ -931,7 +930,7 @@ namespace Contracts
                                reader[20].ToString(), reader[21].ToString(), reader[22].ToString(),
                                reader[23].ToString(), reader[24].ToString(), reader[25].ToString(),
                                reader[26].ToString(), reader[27].ToString(), reader[28].ToString(),
-                               reader[29].ToString(), reader[30].ToString(), reader[31].ToString()));
+                               reader[29].ToString(), reader[30].ToString(), reader[31].ToString(), Convert.ToInt32(reader[32]), Convert.ToInt32(reader[33]), Convert.ToInt32(reader[34]), Convert.ToInt32(reader[35])));
                        }
                    }
                }

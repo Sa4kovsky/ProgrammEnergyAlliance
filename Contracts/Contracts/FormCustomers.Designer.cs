@@ -61,6 +61,7 @@ namespace Contracts
             this.button2 = new System.Windows.Forms.Button();
             this.buttonExecutor = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -182,8 +183,9 @@ namespace Contracts
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(732, 98);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(515, 23);
+            this.textBox1.Size = new System.Drawing.Size(477, 23);
             this.textBox1.TabIndex = 2;
             // 
             // textBox4
@@ -366,11 +368,28 @@ namespace Contracts
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.Cursor = System.Windows.Forms.Cursors.PanNorth;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(1215, 93);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 32);
+            this.button4.TabIndex = 267;
+            this.button4.TabStop = false;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FormCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 388);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
@@ -387,7 +406,6 @@ namespace Contracts
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -443,6 +461,7 @@ namespace Contracts
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonExecutor;
         private System.Windows.Forms.Button button3;
+        private Button button4;
 
     }
 }

@@ -141,7 +141,7 @@ namespace Contracts
             if (minus) r.Insert(0, "минус ");
 
             //Делаем первую букву заглавной
-            r[0] = char.ToLower(r[0]);
+            r[0] = char.ToUpper(r[0]);
 
             return r.ToString();
         }
