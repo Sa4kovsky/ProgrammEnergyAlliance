@@ -168,6 +168,7 @@ namespace Contracts
                 nameNameCustomers, positionNameCustomer, positionNameCustomers, actingOnTheBasis, number, date);
             connect.ShowFieldsNameCustomer();
             OutputTable(connect.NameCustomerses);
+            Close();
         }
 
         private void UpdateCustomer_Click(object sender, EventArgs e)
@@ -191,6 +192,7 @@ namespace Contracts
                     nameNameCustomers, positionNameCustomer, positionNameCustomers, actingOnTheBasis, number, date);
                 connect.ShowFieldsNameCustomer();
                 OutputTable(connect.NameCustomerses);
+                Close();
             }
         }
 

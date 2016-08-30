@@ -60,6 +60,7 @@ namespace Contracts
             connects.InsertToTableWorks(worksType);
             connects.ShowFieldsWorks();
             OutputTable(connects.Works);
+            Close();
         }
 
         private void UpdateExecutor_Click(object sender, EventArgs e)
@@ -76,6 +77,7 @@ namespace Contracts
                 connects.UpdateFromTableWorks(id, worksType);
                 connects.ShowFieldsWorks();
                 OutputTable(connects.Works);
+                Close();
             }
         }
 

@@ -125,6 +125,7 @@ namespace Contracts
                 actingOnTheBasis, number, date);
             connect.ShowFieldsExecutors();
             OutputTable(connect.Executors);
+            Close();
         }
 
         private void UpdateExecutor_Click(object sender, EventArgs e)
@@ -148,6 +149,7 @@ namespace Contracts
                     actingOnTheBasis, number, date);
                 connect.ShowFieldsExecutors();
                 OutputTable(connect.Executors);
+                Close();
             }
         }
 

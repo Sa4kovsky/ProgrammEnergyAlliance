@@ -65,14 +65,14 @@
             this.buttonExecutor = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -398,7 +398,7 @@
             this.panelMenu.Location = new System.Drawing.Point(32, 26);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(155, 733);
+            this.panelMenu.Size = new System.Drawing.Size(10, 733);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Visible = false;
             // 
@@ -493,14 +493,13 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.monthCalendar2);
+            this.tabPage1.Controls.Add(this.textBox23);
             this.tabPage1.Controls.Add(this.label39);
             this.tabPage1.Controls.Add(this.label38);
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.monthCalendar2);
-            this.tabPage1.Controls.Add(this.textBox23);
             this.tabPage1.Controls.Add(this.button8);
-            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Controls.Add(this.comboBox10);
             this.tabPage1.Controls.Add(this.comboBox8);
             this.tabPage1.Controls.Add(this.comboBox7);
@@ -574,6 +573,7 @@
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.textBox10);
+            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -581,6 +581,30 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "договор оказания услуг";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(458, 520);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.TabIndex = 268;
+            this.monthCalendar2.Visible = false;
+            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(434, 518);
+            this.textBox23.Multiline = true;
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(705, 24);
+            this.textBox23.TabIndex = 23;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(135, 520);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 266;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label39
             // 
@@ -622,22 +646,6 @@
             this.label15.Text = "label15";
             this.label15.Visible = false;
             // 
-            // monthCalendar2
-            // 
-            this.monthCalendar2.Location = new System.Drawing.Point(458, 520);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 268;
-            this.monthCalendar2.Visible = false;
-            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(434, 518);
-            this.textBox23.Multiline = true;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(705, 24);
-            this.textBox23.TabIndex = 23;
-            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(1145, 429);
@@ -647,14 +655,6 @@
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(135, 520);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 266;
-            this.monthCalendar1.Visible = false;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // comboBox10
             // 
@@ -949,12 +949,12 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(599, 432);
+            this.label25.Location = new System.Drawing.Point(607, 432);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(88, 16);
+            this.label25.Size = new System.Drawing.Size(80, 16);
             this.label25.TabIndex = 246;
-            this.label25.Text = "Юр. Адресс";
+            this.label25.Text = "Юр. Адрес";
             // 
             // label26
             // 
@@ -1438,7 +1438,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(87, 48);
             this.button6.TabIndex = 272;
-            this.button6.Text = "Добавить аванс";
+            this.button6.Text = "Добавить стоимость";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

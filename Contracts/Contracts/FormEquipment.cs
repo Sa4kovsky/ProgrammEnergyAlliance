@@ -202,6 +202,7 @@ namespace Contracts
             connect.InsertToTableEquipment(customersId, address, typeEquipment, typeAccount, brandEquipment, du, brandValves, note);
             connect.ShowFieldsEquipment();
             OutputTable(connect.Equipment);
+            Close();
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -225,6 +226,7 @@ namespace Contracts
                 connect.UpdateFromEquipment(idEquipment, customersId, address, typeEquipment, typeAccount, brandEquipment, du, brandValves, note);
                 connect.ShowFieldsEquipment();
                 OutputTable(connect.Equipment);
+                Close();
             }
         }
 

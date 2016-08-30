@@ -70,6 +70,7 @@ namespace Contracts
             connects.InsertToTableBank(nameBank, address);
             connects.ShowFieldsBank();
             OutputTable(connects.Bankses);
+            Close();
         }
 
         private void UpdateExecutor_Click(object sender, System.EventArgs e)
@@ -113,6 +114,7 @@ namespace Contracts
                             connects.UpdateFromTableBank(id, nameBank, address);
                             connects.ShowFieldsBank();
                             OutputTable(connects.Bankses);
+                            Close();
                         }
                     }
                 }

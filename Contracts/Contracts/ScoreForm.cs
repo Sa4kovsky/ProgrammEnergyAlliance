@@ -64,11 +64,11 @@ namespace Contracts
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 if (row.Cells[0].Value != null)
-                    label14.Text = row.Cells[0].Value.ToString();
+                    IDContracts.Text = row.Cells[0].Value.ToString();
                 if (row.Cells[1].Value != null)
-                    comboBox1.Text = row.Cells[1].Value.ToString();
+                 //   comboBox1.Text = row.Cells[1].Value.ToString();
                 if (row.Cells[2].Value != null)
-                    textBox1.Text = row.Cells[2].Value.ToString();
+                    textBoxAddress.Text = row.Cells[2].Value.ToString();
                 if (row.Cells[3].Value != null)
                     numericUpDown3.Text = row.Cells[3].Value.ToString();
                 if (row.Cells[4].Value != null)
@@ -156,14 +156,14 @@ namespace Contracts
 
         private int name1;
 
-        private void comboBox1_Selected(object sender, EventArgs e)
+    /*    private void comboBox1_Selected(object sender, EventArgs e)
         {
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             SelectDateView selecteDateView = (SelectDateView) comboBox1.SelectedItem;
             try
             {
                 label10.Text = "Договор № " + Convert.ToString(selecteDateView.Number) + selecteDateView.SignWork;
-                textBox1.Text = selecteDateView.Address;
+                textBoxAddress.Text = selecteDateView.Address;
                 idContrects = selecteDateView.Id;
             }
             catch
@@ -191,8 +191,7 @@ namespace Contracts
             comboBox1.DataSource = selectDateViews;
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Name";
-        }
-
+        }*/      
         #endregion
 
         private int flag;
@@ -202,19 +201,20 @@ namespace Contracts
             flag++;
             if (flag == 1)
             {
-                SelectDateView selecteDateView = (SelectDateView) comboBox1.SelectedItem;
-                textBox1.Text = selecteDateView.Address;
 
-                this.textBox1.Size = new System.Drawing.Size(585, 505);
-                this.textBox1.Location = new System.Drawing.Point(32, 20);
+                textBoxAddress.Text = AddressLable.Text;
+
+                this.textBoxAddress.Size = new System.Drawing.Size(585, 320);
+                this.textBoxAddress.Location = new System.Drawing.Point(32, 181);
                 flag++;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanSouth;
             }
             else
             {
-                this.textBox1.Size = new System.Drawing.Size(485, 20);
-                this.textBox1.Location = new System.Drawing.Point(132, 505);
+                this.textBoxAddress.Size = new System.Drawing.Size(485, 20);
+                this.textBoxAddress.Location = new System.Drawing.Point(132, 481);
+
                 flag = 0;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -226,8 +226,8 @@ namespace Contracts
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            address = textBox1.Text;
-            name1 = Convert.ToInt32(numericUpDown2.Text);
+            address = textBoxAddress.Text;
+            name1 = Convert.ToInt32(DataLable.Text);
             connect.TypeCounter.Clear();
             connect.TypeCounterTwo.Clear();
             connect.TypeCounterThree.Clear();
@@ -279,7 +279,8 @@ namespace Contracts
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            addresss = textBox1.Text;
+            addresss = textBoxAddress.Text;
+            idContrects = Int32.Parse(IDContracts.Text);
             oneFlow = Convert.ToInt32(numericUpDown3.Text);
             twoFlow = Convert.ToInt32(numericUpDown4.Text);
             threeFlow = Convert.ToInt32(numericUpDown5.Text);
@@ -291,28 +292,28 @@ namespace Contracts
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (label14.Text == "")
+            if (IDContracts.Text == "")
             {
                 MessageBox.Show("Проверьте №");
             }
             else
             {
-                id = Convert.ToInt32(label14.Text);
+                id = Convert.ToInt32(IDContracts.Text);
                 connect.DeleteFromTableScore(id);
             }
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
-            if (label14.Text == "")
+            if (IDContracts.Text == "")
             {
                 MessageBox.Show("Проверьте №");
             }
             else
             {
-                id = Convert.ToInt32(label14.Text);
-                ;
-                addresss = textBox1.Text;
+                id = Convert.ToInt32(IDContracts.Text);
+                idContrects = Int32.Parse(IDContracts.Text);
+                addresss = textBoxAddress.Text;
                 oneFlow = Convert.ToInt32(numericUpDown3.Text);
                 twoFlow = Convert.ToInt32(numericUpDown4.Text);
                 threeFlow = Convert.ToInt32(numericUpDown5.Text);
@@ -823,7 +824,6 @@ namespace Contracts
 
             connect.UpdateFromSum(itogOdnpot5.ToString(), id);
         }
-
 
     }
 }

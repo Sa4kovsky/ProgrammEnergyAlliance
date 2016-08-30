@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Contracts.Objects;
 using Word = Microsoft.Office.Interop.Word;
@@ -364,6 +365,12 @@ namespace Contracts
             try
             {
                 label15.Text = Convert.ToString(executor.IdExecutor);
+                textBox3.Text = executor.NameExecutors;
+                textBox4.Text = executor.PositionExecutor;
+                textBox5.Text = executor.PositionExecutors;
+                textBox6.Text = executor.ActingOnTheBasis;
+                textBox7.Text = executor.Number;
+                textBox8.Text = executor.Date;
             }
             catch
             {
@@ -582,6 +589,7 @@ namespace Contracts
 
         }
 
+      
         private void Insert_Click(object sender, EventArgs e)
         {
             connect.ViewContractses.Clear();
@@ -600,6 +608,9 @@ namespace Contracts
 
             connect.ShowFieldsViewContractses(names);
             OutputTable(connect.ViewContractses);
+            connect.SelectMaxId.Clear();
+            connect.ShowFieldsSelectMaxId();
+          //  dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -899,6 +910,15 @@ namespace Contracts
         ScoreForm scoreForm = new ScoreForm();
         private void button4_Click(object sender, EventArgs e)
         {
+            connect.SelectDateViewse.Clear();
+            connect.Scores.Clear();
+            connect.ShowFieldsScore(Int32.Parse(label16.Text) + 1);
+
+            scoreForm.OutputTable(connect.Scores);
+            scoreForm.IDContracts.Text = label16.Text;
+            scoreForm.DataLable.Text = monthCalendar1.SelectionStart.Year.ToString();
+            scoreForm.AddressLable.Text = textBox23.Text;
+            scoreForm.textBoxAddress.Text = textBox23.Text;
             scoreForm.ShowDialog();
         }
 

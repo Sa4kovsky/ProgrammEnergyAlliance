@@ -234,6 +234,7 @@ namespace Contracts
 
             connect.ShowFieldsDevaisesMaterialses();
             OutputTable(connect.DevaisesMaterialses);
+            Close();
         }
 
         private int id;
@@ -256,6 +257,7 @@ namespace Contracts
 
                 connect.ShowFieldsDevaisesMaterialses();
                 OutputTable(connect.DevaisesMaterialses);
+                Close();
             }
         }
 

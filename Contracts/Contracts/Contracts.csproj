@@ -139,6 +139,7 @@
     <Compile Include="Objects\NameCustomerSelect.cs" />
     <Compile Include="Objects\Score.cs" />
     <Compile Include="Objects\SelectDateView.cs" />
+    <Compile Include="Objects\SelectMaxId.cs" />
     <Compile Include="Objects\TypeCounterOne.cs" />
     <Compile Include="Objects\TypeCounterThree.cs" />
     <Compile Include="Objects\TypeCounterTwo.cs" />

@@ -47,18 +47,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label122 = new System.Windows.Forms.Label();
@@ -317,10 +312,12 @@
             this.textBox115 = new System.Windows.Forms.TextBox();
             this.textBox116 = new System.Windows.Forms.TextBox();
             this.label111 = new System.Windows.Forms.Label();
+            this.IDContracts = new System.Windows.Forms.Label();
+            this.DataLable = new System.Windows.Forms.Label();
+            this.AddressLable = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
@@ -486,7 +483,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 509);
+            this.label6.Location = new System.Drawing.Point(14, 485);
             this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 16);
@@ -496,7 +493,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 535);
+            this.label7.Location = new System.Drawing.Point(239, 511);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 16);
@@ -506,7 +503,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(240, 562);
+            this.label8.Location = new System.Drawing.Point(240, 538);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 16);
@@ -516,7 +513,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(241, 593);
+            this.label9.Location = new System.Drawing.Point(241, 569);
             this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 16);
@@ -531,66 +528,14 @@
             this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 41;
             // 
-            // numericUpDown2
+            // textBoxAddress
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(61, 476);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            4000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            2015,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(77, 23);
-            this.numericUpDown2.TabIndex = 40;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            2016,
-            0,
-            0,
-            0});
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(144, 478);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 16);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "Учреждение";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 478);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 16);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "Дата";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(242, 475);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(286, 24);
-            this.comboBox1.TabIndex = 37;
-            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDownOpened);
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.DropDownClosed += new System.EventHandler(this.comboBox1_Selected);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(132, 505);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(485, 20);
-            this.textBox1.TabIndex = 42;
-            this.textBox1.DoubleClick += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxAddress.Location = new System.Drawing.Point(132, 481);
+            this.textBoxAddress.Multiline = true;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(485, 20);
+            this.textBoxAddress.TabIndex = 42;
+            this.textBoxAddress.DoubleClick += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -598,7 +543,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(623, 500);
+            this.button1.Location = new System.Drawing.Point(623, 470);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 32);
@@ -610,7 +555,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(242, 620);
+            this.label13.Location = new System.Drawing.Point(242, 596);
             this.label13.Margin = new System.Windows.Forms.Padding(5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 16);
@@ -619,41 +564,31 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(350, 531);
+            this.numericUpDown3.Location = new System.Drawing.Point(350, 507);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(59, 23);
             this.numericUpDown3.TabIndex = 267;
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(350, 560);
+            this.numericUpDown4.Location = new System.Drawing.Point(350, 536);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(59, 23);
             this.numericUpDown4.TabIndex = 268;
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(350, 589);
+            this.numericUpDown5.Location = new System.Drawing.Point(350, 565);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(59, 23);
             this.numericUpDown5.TabIndex = 269;
             // 
             // numericUpDown6
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(350, 618);
+            this.numericUpDown6.Location = new System.Drawing.Point(350, 594);
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(59, 23);
             this.numericUpDown6.TabIndex = 270;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(471, 450);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 16);
-            this.label14.TabIndex = 271;
-            this.label14.Text = "Учреждение";
-            this.label14.Visible = false;
             // 
             // tabControl1
             // 
@@ -3089,26 +3024,54 @@
             this.label111.TabIndex = 273;
             this.label111.Text = "Итог =";
             // 
+            // IDContracts
+            // 
+            this.IDContracts.AutoSize = true;
+            this.IDContracts.Location = new System.Drawing.Point(471, 450);
+            this.IDContracts.Name = "IDContracts";
+            this.IDContracts.Size = new System.Drawing.Size(92, 16);
+            this.IDContracts.TabIndex = 271;
+            this.IDContracts.Text = "Учреждение";
+            this.IDContracts.Visible = false;
+            // 
+            // DataLable
+            // 
+            this.DataLable.AutoSize = true;
+            this.DataLable.Location = new System.Drawing.Point(563, 450);
+            this.DataLable.Name = "DataLable";
+            this.DataLable.Size = new System.Drawing.Size(92, 16);
+            this.DataLable.TabIndex = 274;
+            this.DataLable.Text = "Учреждение";
+            this.DataLable.Visible = false;
+            // 
+            // AddressLable
+            // 
+            this.AddressLable.AutoSize = true;
+            this.AddressLable.Location = new System.Drawing.Point(17, 452);
+            this.AddressLable.Name = "AddressLable";
+            this.AddressLable.Size = new System.Drawing.Size(92, 16);
+            this.AddressLable.TabIndex = 275;
+            this.AddressLable.Text = "Учреждение";
+            this.AddressLable.Visible = false;
+            // 
             // ScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.AddressLable);
+            this.Controls.Add(this.DataLable);
             this.Controls.Add(this.label111);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.IDContracts);
             this.Controls.Add(this.numericUpDown6);
             this.Controls.Add(this.numericUpDown5);
             this.Controls.Add(this.numericUpDown4);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -3136,7 +3099,6 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
@@ -3177,18 +3139,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -3386,7 +3342,6 @@
         private System.Windows.Forms.TextBox textBox91;
         private System.Windows.Forms.TextBox textBox92;
         private System.Windows.Forms.TextBox textBox93;
-        private System.Windows.Forms.Label label111;
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.Label label114;
@@ -3447,5 +3402,10 @@
         private System.Windows.Forms.TextBox textBox114;
         private System.Windows.Forms.TextBox textBox115;
         private System.Windows.Forms.TextBox textBox116;
+        private System.Windows.Forms.Label label111;
+        public System.Windows.Forms.Label IDContracts;
+        public System.Windows.Forms.Label DataLable;
+        public System.Windows.Forms.Label AddressLable;
+        public System.Windows.Forms.TextBox textBoxAddress;
     }
 }
