@@ -333,14 +333,14 @@ namespace Contracts
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Директор",
-            "Зам. Директор",
-            "Ген. Директор",
-            "И.О. Директора",
+            "Заместитель директора",
+            "Генеральный директор",
+            "Исполняющий обязанности директора",
             "Председатель",
             "Главный инженер",
-            "Глав. Врач",
+            "Главный врач",
             "Начальник",
-            "Зам. Начальника",
+            "Заместитель начальника",
             "________________"});
             this.comboBox2.Location = new System.Drawing.Point(992, 187);
             this.comboBox2.Name = "comboBox2";

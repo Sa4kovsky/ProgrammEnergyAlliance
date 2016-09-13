@@ -279,6 +279,7 @@ namespace Contracts
 
         private void Insert_Click(object sender, EventArgs e)
         {
+            id = Int32.Parse(IDContracts.Text);
             addresss = textBoxAddress.Text;
             idContrects = Int32.Parse(IDContracts.Text);
             oneFlow = Convert.ToInt32(numericUpDown3.Text);
@@ -287,6 +288,9 @@ namespace Contracts
             manometer = Convert.ToInt32(numericUpDown6.Text);
 
             connect.InsertToTableScore(idContrects, addresss, oneFlow, twoFlow, threeFlow, manometer);
+            connect.Scores.Clear();
+            connect.ShowFieldsScore(id);
+            OutputTable(connect.Scores);
 
         }
 
@@ -300,6 +304,9 @@ namespace Contracts
             {
                 id = Convert.ToInt32(IDContracts.Text);
                 connect.DeleteFromTableScore(id);
+                connect.Scores.Clear();
+                connect.ShowFieldsScore(id);
+                OutputTable(connect.Scores);
             }
         }
 
@@ -320,6 +327,9 @@ namespace Contracts
                 manometer = Convert.ToInt32(numericUpDown6.Text);
 
                 connect.UpdateFromTableScore(id, idContrects, addresss, oneFlow, twoFlow, threeFlow, manometer);
+                connect.Scores.Clear();
+                connect.ShowFieldsScore(id);
+                OutputTable(connect.Scores);
             }
         }
 
@@ -371,6 +381,7 @@ namespace Contracts
 
         private void Decision()
         {
+            id = Int32.Parse(IDContracts.Text);
             normTime = Convert.ToDouble(textBox2.Text);
             poverca = Convert.ToDouble(textBox3.Text);
             rentab = Convert.ToDouble(textBox4.Text);
@@ -781,6 +792,7 @@ namespace Contracts
        nakladn4, vsego4, itogOdnpot5;
         private void button6_Click(object sender, EventArgs e)
         {
+            id = Int32.Parse(IDContracts.Text);
             normTime4 = Convert.ToDouble(textBox116.Text);
             poverca4 = Convert.ToDouble(textBox115.Text);
             rentab4 = Convert.ToDouble(textBox114.Text);

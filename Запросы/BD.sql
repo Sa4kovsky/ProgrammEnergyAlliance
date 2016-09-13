@@ -1,4 +1,4 @@
-﻿DROP TABLE Executor,Works,Bank,Customer,NameCustomer,Contracts,Score,Materials;
+﻿--DROP TABLE Executor,Works,Bank,Customer,NameCustomer,Contracts,Score,Materials CASCADE;
 
 CREATE TABLE Executor(
 	idExecutor SERIAL PRIMARY KEY,  --идентифицирующий ключ
@@ -67,7 +67,7 @@ CREATE TABLE Contracts (
 	addressWork text,
 	
 	FOREIGN KEY (idExecutor) REFERENCES Executor(idExecutor), 
-	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer), 
+	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer) Contracts(idContrects) ON DELETE CASCADE,
 	FOREIGN KEY (idNameCustomer) REFERENCES NameCustomer(idNameCustomer), 
 	FOREIGN KEY (idWorks) REFERENCES Works(idWorks)
 );
@@ -82,7 +82,7 @@ CREATE TABLE Score --счет
 	threeFlow integer,
 	manometer integer,
 
-	FOREIGN KEY (idContrects) REFERENCES Contracts(idContrects)
+	FOREIGN KEY (idContrects) REFERENCES Contracts(idContrects) ON DELETE CASCADE
 );
 
 CREATE TABLE Materials --материалы
@@ -101,7 +101,7 @@ CREATE TABLE Materials --материалы
 	note text,
 	data text,
 
-	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer)
+	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer) ON DELETE CASCADE
 );
 
 CREATE TABLE Equipment --оборудование
@@ -116,7 +116,7 @@ CREATE TABLE Equipment --оборудование
 	brandValves text,
 	note text, 
 	
-	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer)
+	FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer) ON DELETE CASCADE
 );
 
 

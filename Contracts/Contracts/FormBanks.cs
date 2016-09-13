@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Mime;
 using System.Windows.Forms;
 using Contracts.Objects;
 
@@ -107,14 +108,15 @@ namespace Contracts
                             if (results == DialogResult.Yes)
                             {
                                 connects.Bankses.Clear();
+                                id = Convert.ToInt32(Id.Text);
+                                nameBank = textBox1.Text;
+                                address = textBox2.Text;
+                                connects.UpdateFromTableBank(id, nameBank, address);
+                                connects.ShowFieldsBank();
+                                OutputTable(connects.Bankses);
+                                Close();
                             }
-                            id = Convert.ToInt32(Id.Text);
-                            nameBank = textBox1.Text;
-                            address = textBox2.Text;
-                            connects.UpdateFromTableBank(id, nameBank, address);
-                            connects.ShowFieldsBank();
-                            OutputTable(connects.Bankses);
-                            Close();
+                           
                         }
                     }
                 }
@@ -212,5 +214,6 @@ namespace Contracts
                 textBox2.BackColor = Color.White;
             }
         }
+
     }
 }

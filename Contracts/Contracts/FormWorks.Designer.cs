@@ -77,6 +77,7 @@
             this.DeleteExecutor.TabIndex = 48;
             this.toolTip1.SetToolTip(this.DeleteExecutor, "Удалить");
             this.DeleteExecutor.UseVisualStyleBackColor = true;
+            this.DeleteExecutor.Visible = false;
             this.DeleteExecutor.Click += new System.EventHandler(this.DeleteExecutor_Click);
             // 
             // UpdateExecutor
@@ -84,7 +85,7 @@
             this.UpdateExecutor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UpdateExecutor.BackgroundImage")));
             this.UpdateExecutor.FlatAppearance.BorderSize = 0;
             this.UpdateExecutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateExecutor.Location = new System.Drawing.Point(740, 186);
+            this.UpdateExecutor.Location = new System.Drawing.Point(796, 186);
             this.UpdateExecutor.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.UpdateExecutor.Name = "UpdateExecutor";
             this.UpdateExecutor.Size = new System.Drawing.Size(48, 48);
@@ -98,7 +99,7 @@
             this.InsertExecutor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("InsertExecutor.BackgroundImage")));
             this.InsertExecutor.FlatAppearance.BorderSize = 0;
             this.InsertExecutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InsertExecutor.Location = new System.Drawing.Point(680, 186);
+            this.InsertExecutor.Location = new System.Drawing.Point(740, 186);
             this.InsertExecutor.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.InsertExecutor.Name = "InsertExecutor";
             this.InsertExecutor.Size = new System.Drawing.Size(48, 48);
@@ -198,7 +199,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textSearch);
-            this.Controls.Add(this.DeleteExecutor);
             this.Controls.Add(this.UpdateExecutor);
             this.Controls.Add(this.InsertExecutor);
             this.Controls.Add(this.label4);
@@ -206,6 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DeleteExecutor);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);

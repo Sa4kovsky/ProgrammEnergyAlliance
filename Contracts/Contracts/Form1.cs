@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
 using Contracts.Objects;
@@ -15,6 +16,9 @@ namespace Contracts
         {
             InitializeComponent();
             InitTable();
+            this.KeyPreview = true;
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+          //  this.button2.Click += new System.EventHandler(this.button2_Click);  
         }
 
         public void InitTable()
@@ -220,7 +224,7 @@ namespace Contracts
             {
                 System.IO.StreamReader sr = new
                     System.IO.StreamReader(openFileDialog1.FileName);
-                MessageBox.Show(sr.ReadToEnd());
+             //   MessageBox.Show(sr.ReadToEnd());
 
                 connect.ConnectsSQL(openFileDialog1.FileName);
                 sr.Close();
@@ -341,8 +345,8 @@ namespace Contracts
                 if (row.Cells[30].Value != null)
                     textBox27.Text = row.Cells[30].Value.ToString();
                 if (row.Cells[31].Value != null)
-                    textBox2.Text = row.Cells[32].Value.ToString();
-                if (row.Cells[31].Value != null)
+                    textBox2.Text = row.Cells[31].Value.ToString();
+                if (row.Cells[32].Value != null)
                     label15.Text = row.Cells[32].Value.ToString();
                 if (row.Cells[33].Value != null)
                     label32.Text = row.Cells[33].Value.ToString();
@@ -403,7 +407,7 @@ namespace Contracts
 
         private void comboBox4_Selected(object sender, EventArgs e)
         {
-            this.comboBox4.Location = new System.Drawing.Point(549, 459);
+            this.comboBox4.Location = new System.Drawing.Point(545, 487);
             this.comboBox4.Size = new System.Drawing.Size(628, 24);
             comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             Works works = (Works) comboBox4.SelectedItem;
@@ -422,8 +426,8 @@ namespace Contracts
 
         private void comboBox4_DropDownOpened(object sender, EventArgs e)
         {
-            this.comboBox4.Location = new System.Drawing.Point(149, 459);
-            this.comboBox4.Size = new System.Drawing.Size(1028, 24);
+            this.comboBox4.Location = new System.Drawing.Point(345, 487);
+            this.comboBox4.Size = new System.Drawing.Size(828, 24);
             comboBox4.DataSource = null;
             comboBox4.Items.Clear();
             connect.Works.Clear();
@@ -446,7 +450,7 @@ namespace Contracts
 
         private void comboBox5_Selected(object sender, EventArgs e)
         {
-            this.comboBox5.Location = new System.Drawing.Point(694, 399);
+            this.comboBox5.Location = new System.Drawing.Point(690, 427);
             this.comboBox5.Size = new System.Drawing.Size(483, 24);
             comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             Customers customers = (Customers) comboBox5.SelectedItem;
@@ -466,14 +470,16 @@ namespace Contracts
         {
         }
 
+        private string nameInstitution;
+
         private void comboBox5_DropDownOpened(object sender, EventArgs e)
         {
-            this.comboBox5.Location = new System.Drawing.Point(426, 399);
-            this.comboBox5.Size = new System.Drawing.Size(751, 24);
+            this.comboBox5.Location = new System.Drawing.Point(290, 427);
+            this.comboBox5.Size = new System.Drawing.Size(883, 24);
             comboBox5.DataSource = null;
             comboBox5.Items.Clear();
             connect.Customerses.Clear();
-            connect.ShowFieldsCustomersesSerch(names);
+            connect.ShowFieldsCustomersesSerch(names, nameInstitution);
             Custom(connect.Customerses);
         }
 
@@ -572,16 +578,17 @@ namespace Contracts
             flag++;
             if (flag == 1)
             {
-                this.textBox23.Size = new System.Drawing.Size(705, 424);
-                this.textBox23.Location = new System.Drawing.Point(434, 118); 
+                this.textBox23.Size = new System.Drawing.Size(905, 524);
+                this.textBox23.Location = new System.Drawing.Point(230, 46); ; 
                 flag++;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanSouth;
             }
             else
-            {
+              {
                 this.textBox23.Size = new System.Drawing.Size(705, 24);
-                this.textBox23.Location = new System.Drawing.Point(434, 518);
+                this.textBox23.Location = new System.Drawing.Point(430, 546);
+
                 flag = 0;
 
                 this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -606,11 +613,11 @@ namespace Contracts
                 financing, Convert.ToInt32(label39.Text),
                 dateStart, dateFinish, costServices, prepayment, sumPrepayment, addressWork);
 
-            connect.ShowFieldsViewContractses(names);
+            connect.ShowFieldsViewContractses(names,nameInstitution);
             OutputTable(connect.ViewContractses);
             connect.SelectMaxId.Clear();
             connect.ShowFieldsSelectMaxId();
-          //  dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
+           
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -638,7 +645,7 @@ namespace Contracts
                     Convert.ToInt32(label38.Text), financing, Convert.ToInt32(label39.Text),
                     dateStart, dateFinish, costServices, prepayment, sumPrepayment, addressWork);
 
-                connect.ShowFieldsViewContractses(names);
+                connect.ShowFieldsViewContractses(names,nameInstitution);
                 OutputTable(connect.ViewContractses);
             }
         }
@@ -659,7 +666,7 @@ namespace Contracts
                     connect.ViewContractses.Clear();
                     id = Convert.ToInt32(label16.Text);
                     connect.DeleteFromTableViewContractses(id);
-                    connect.ShowFieldsViewContractses(names);
+                    connect.ShowFieldsViewContractses(names, nameInstitution);
                     OutputTable(connect.ViewContractses);
                 }
             }
@@ -769,7 +776,7 @@ namespace Contracts
             monthCalendar2.Visible = false;
             monthCalendar1.Visible = false;
             this.textBox23.Size = new System.Drawing.Size(705, 24);
-            this.textBox23.Location = new System.Drawing.Point(434, 518);
+            this.textBox23.Location = new System.Drawing.Point(430, 546);
             flag = 0;
 
             this.button1.Cursor = System.Windows.Forms.Cursors.PanNorth;
@@ -842,7 +849,14 @@ namespace Contracts
             {
                 string[] wordsStrings = value.Split(sepa, StringSplitOptions.RemoveEmptyEntries);
                 val = int.Parse(wordsStrings[0]);
-                cop = int.Parse(wordsStrings[1]);
+                if (wordsStrings[1].Length == 1)
+                {
+                    cop = int.Parse(wordsStrings[1] + '0');
+                }
+                else
+                {
+                    cop = int.Parse(wordsStrings[1]);
+                }
                 BelRubCop(cop);
                 BelRub(val);
             }
@@ -875,7 +889,14 @@ namespace Contracts
                 {
                     string[] wordsStrings = value.Split(sepa, StringSplitOptions.RemoveEmptyEntries);
                     val = int.Parse(wordsStrings[0]);
-                    cop = int.Parse(wordsStrings[1]);
+                    if (wordsStrings[1].Length == 1)
+                    {
+                        cop = int.Parse(wordsStrings[1] + '0');
+                    }
+                    else
+                    {
+                        cop = int.Parse(wordsStrings[1]);
+                    }
                     BelRubCop(cop);
                     BelRub(val);
                 }
@@ -895,7 +916,14 @@ namespace Contracts
                 {
                     string[] wordsStrings = value.Split(sepa, StringSplitOptions.RemoveEmptyEntries);
                     val = int.Parse(wordsStrings[0]);
-                    cop = int.Parse(wordsStrings[1]);
+                    if (wordsStrings[1].Length == 1)
+                    {
+                        cop = int.Parse(wordsStrings[1] + '0');
+                    }
+                    else
+                    {
+                        cop = int.Parse(wordsStrings[1]);
+                    }
                     BelRubCop(cop);
                     BelRub(val);
                 }
@@ -912,7 +940,7 @@ namespace Contracts
         {
             connect.SelectDateViewse.Clear();
             connect.Scores.Clear();
-            connect.ShowFieldsScore(Int32.Parse(label16.Text) + 1);
+            connect.ShowFieldsScore(Int32.Parse(label16.Text));
 
             scoreForm.OutputTable(connect.Scores);
             scoreForm.IDContracts.Text = label16.Text;
@@ -934,7 +962,7 @@ namespace Contracts
         private void button6_Click(object sender, EventArgs e)
         {
             connect.ViewContractses.Clear();
-            connect.ShowFieldsViewContractses(names);
+            connect.ShowFieldsViewContractses(names, nameInstitution);
             OutputTable(connect.ViewContractses);
         }
 
@@ -1005,14 +1033,32 @@ namespace Contracts
             oDoc.Bookmarks["ДатаОкончанияРабот"].Range.Text = comboBox10.Text;
             PerevodCost();
             oDoc.Bookmarks["СтоимостьУслуг"].Range.Text = textBox11.Text;
-            oDoc.Bookmarks["СтоимостьУслугБуквами"].Range.Text = vall + " " + copp;
+            if (textBox11.Text.Contains(","))
+            {
+                oDoc.Bookmarks["СтоимостьУслугБуквами"].Range.Text = vall + " " + copp;
+            }
+            else
+            {
+                oDoc.Bookmarks["СтоимостьУслугБуквами"].Range.Text = vall;
+            }
             if (chek == true || chek1 == true || chek2 == true || chek3 == true || chek5 == true || chek6 == true || chek7 == true || chek8 == true)
             {     
                 oDoc.Bookmarks["Аванс"].Range.Text = comboBox6.Text;
                 PerevodAvans();
                 oDoc.Bookmarks["АвансСумма"].Range.Text = avans.ToString();
-                oDoc.Bookmarks["ПроцентАванса"].Range.Text = textBox13.Text;
-                oDoc.Bookmarks["АвансСуммаБуква"].Range.Text = vall + " " + copp;
+                if (comboBox6.Text != "стоимости материалов")
+                {
+                    oDoc.Bookmarks["ПроцентАванса"].Range.Text = textBox13.Text;
+                }
+                else { oDoc.Bookmarks["ПроцентАванса"].Range.Text = ""; }
+                if (textBox13.Text.Contains(","))
+                {
+                    oDoc.Bookmarks["АвансСуммаБуква"].Range.Text = vall + " " + copp;
+                }
+                else
+                {
+                    oDoc.Bookmarks["АвансСуммаБуква"].Range.Text = vall;
+                }
                 chek = false;
                 chek1 = false; 
                 chek2 = false;
@@ -1030,7 +1076,7 @@ namespace Contracts
             oDoc.Bookmarks["УНП"].Range.Text = textBox27.Text;
             if (textBox2.Text != "")
             {
-                oDoc.Bookmarks["ОКПО"].Range.Text = "ОКПО" + textBox2.Text;
+                oDoc.Bookmarks["ОКПО"].Range.Text = "ОКПО " + textBox2.Text;
             }
             else
             { 
@@ -1044,7 +1090,7 @@ namespace Contracts
 
         private void оказанияУслугБюджетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            oWord = new Word.Application();
+           oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
                     GetDoc("d:\\GomelEnergyAlliance\\Shablon\\2 договор оказания услуг поверка бюджет.docx");
@@ -1070,7 +1116,7 @@ namespace Contracts
 
         private void оказанияУслугБюджетToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            oWord = new Word.Application();
+           oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
                     GetDoc("d:\\GomelEnergyAlliance\\Shablon\\4 договор оказания услуг промывка бюджет.docx");
@@ -1104,7 +1150,7 @@ namespace Contracts
 
         private void оказанияУслугБюджетToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            oWord = new Word.Application();
+           oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
                     GetDoc("d:\\GomelEnergyAlliance\\Shablon\\7 договор оказания услуг сантехника бюджет.docx");
@@ -1147,7 +1193,7 @@ namespace Contracts
         private void подрядаToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             chek6 = true;
-            oWord = new Word.Application();
+           oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
                     GetDoc("d:\\GomelEnergyAlliance\\Shablon\\5 договор подряда наладка регулятора.docx");
@@ -1164,7 +1210,7 @@ namespace Contracts
         private void подрядаToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             chek5 = true;
-            oWord = new Word.Application();
+          oWord = new Word.Application();
             oWord.Visible = true;
             Word._Document oDoc =
                     GetDoc("d:\\GomelEnergyAlliance\\Shablon\\8 договор подряда сантехника.docx");
@@ -1180,19 +1226,26 @@ namespace Contracts
 
         private string names;
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) button8.PerformClick();
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            names = textBox10.Text;
+            names = textBox12.Text;
+            nameInstitution = comboBox5.Text;
             connect.ViewContractses.Clear();
-            connect.ShowFieldsViewContractses(names);
+            connect.ShowFieldsViewContractses(names, nameInstitution);
             OutputTable(connect.ViewContractses);
-            Customers customers = (Customers)textBox10.Container;
+            Customers customers = (Customers)textBox12.Container;
             try
             {
                 label32.Text = Convert.ToString(customers.IdCustomer);
-                name = customers.IdCustomer;
-                //    comboBox9.Text = customers.LegalAddress;
+               /* comboBox5.Text = customers.NameInstitution;
+                 name = customers.IdCustomer;
                 textBox23.Text = customers.AddressWork;
+                textBox10.Text = customers.LegalAddress;*/
             }
             catch
             {

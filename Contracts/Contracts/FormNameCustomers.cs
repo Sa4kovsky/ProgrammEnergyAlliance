@@ -233,13 +233,14 @@ namespace Contracts
 
         private void comboBox3_DropDownOpened(object sender, EventArgs e)
         {
-            string s = comboBox3.Text;
+            string address = comboBox3.Text;
+            string name = comboBox3.Text;
             this.comboBox3.Location = new System.Drawing.Point(691, 100);
             this.comboBox3.Size = new System.Drawing.Size(464, 24);
             comboBox3.DataSource = null;
             comboBox3.Items.Clear();
             connect.Customerses.Clear();
-            connect.ShowFieldsCustomersesSerch(s);
+            connect.ShowFieldsCustomersesSerch(address, name);
             Customer(connect.Customerses);
         }
 

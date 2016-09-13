@@ -71,13 +71,35 @@ namespace Contracts
             }
             else
             {
-                connects.Works.Clear();
-                id = Convert.ToInt32(Id.Text);
-                worksType = textBox1.Text;
-                connects.UpdateFromTableWorks(id, worksType);
-                connects.ShowFieldsWorks();
-                OutputTable(connects.Works);
-                Close();
+                DialogResult result =
+                        MessageBox.Show("Редактирование вида работ приведет к смене вида работ" +
+                                        "у всех заказчиков. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ?",
+                            "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DialogResult results =
+                        MessageBox.Show("Данную процедуру нельзя будет отменить. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ?",
+                            "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (results == DialogResult.Yes)
+                    {
+                        DialogResult resultss =
+                            MessageBox.Show(
+                                "Вы измените вид работ у ВСЕХ заказчиков. ВЫ ТОЧНО ХОТИТЕ ЭТО СДЕЛАТЬ",
+                                "ОСТОРОЖНО", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (results == DialogResult.Yes)
+                        {
+                            connects.Works.Clear();
+                            connects.Works.Clear();
+                            id = Convert.ToInt32(Id.Text);
+                            worksType = textBox1.Text;
+                            connects.UpdateFromTableWorks(id, worksType);
+                            connects.ShowFieldsWorks();
+                            OutputTable(connects.Works);
+                            Close();
+                        }
+                    
+                    }
+                } 
             }
         }
 

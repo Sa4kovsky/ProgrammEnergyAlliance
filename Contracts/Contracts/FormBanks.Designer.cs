@@ -116,6 +116,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(379, 23);
             this.textBox1.TabIndex = 2;
+           
             // 
             // label4
             // 
