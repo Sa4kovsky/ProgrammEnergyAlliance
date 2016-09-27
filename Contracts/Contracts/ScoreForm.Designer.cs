@@ -2514,7 +2514,7 @@
             this.textBox88.Name = "textBox88";
             this.textBox88.Size = new System.Drawing.Size(94, 23);
             this.textBox88.TabIndex = 53;
-            this.textBox88.Text = "0,0";
+            this.textBox88.Text = "0,10";
             // 
             // textBox89
             // 

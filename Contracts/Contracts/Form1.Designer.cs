@@ -151,6 +151,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -645,6 +646,7 @@
             this.tabPage1.Controls.Add(this.comboBox6);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.button9);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1467,9 +1469,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(25, 610);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 48);
+            this.button4.Size = new System.Drawing.Size(119, 48);
             this.button4.TabIndex = 271;
-            this.button4.Text = "Добавить счет";
+            this.button4.Text = "Калькуляция";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -1477,13 +1479,25 @@
             // 
             this.button6.Enabled = false;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(118, 610);
+            this.button6.Location = new System.Drawing.Point(150, 610);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(87, 48);
             this.button6.TabIndex = 272;
             this.button6.Text = "Добавить стоимость";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button9
+            // 
+            this.button9.Enabled = false;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(243, 610);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(87, 48);
+            this.button9.TabIndex = 281;
+            this.button9.Text = "Добавить счет";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // tabControl1
             // 
@@ -1656,6 +1670,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button button9;
 
 
 

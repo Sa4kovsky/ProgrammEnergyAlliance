@@ -700,6 +700,8 @@ namespace Contracts
             excelcells.Value2 = Convert.ToDouble(textBox5.Text);
             excelcells = excelworksheet.get_Range("I18");
             excelcells.Value2 = Convert.ToDouble(textBox6.Text);
+            excelcells = excelworksheet.get_Range("G11");
+            excelcells.Value2 = Convert.ToDouble(textBox7.Text);
             excelcells = excelworksheet.get_Range("I17");
             excelcells.Value2 = Convert.ToDouble(textBox9.Text);
             excelcells = excelworksheet.get_Range("I16");
@@ -716,75 +718,81 @@ namespace Contracts
             excelcells = excelworksheet.get_Range("A8");
             excelcells.Value2 = "по адресу: " + label113.Text;
             excelcells = excelworksheet.get_Range("G12");
-            excelcells.Value2 = Convert.ToDouble(textBox2.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox47.Text);
             excelcells = excelworksheet.get_Range("G23");
-            excelcells.Value2 = Convert.ToDouble(textBox3.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox46.Text);
             excelcells = excelworksheet.get_Range("G21");
-            excelcells.Value2 = Convert.ToDouble(textBox4.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox45.Text);
             excelcells = excelworksheet.get_Range("G25");
-            excelcells.Value2 = Convert.ToDouble(textBox5.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox44.Text);
             excelcells = excelworksheet.get_Range("I18");
-            excelcells.Value2 = Convert.ToDouble(textBox6.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox43.Text);
+            excelcells = excelworksheet.get_Range("G11");
+            excelcells.Value2 = Convert.ToDouble(textBox42.Text);
             excelcells = excelworksheet.get_Range("I17");
-            excelcells.Value2 = Convert.ToDouble(textBox9.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox40.Text);
             excelcells = excelworksheet.get_Range("I16");
-            excelcells.Value2 = Convert.ToDouble(textBox8.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox41.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I14");
-            excelcells.Value2 = Convert.ToDouble(textBox11.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox38.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I15");
-            excelcells.Value2 = Convert.ToDouble(textBox10.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox39.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I13");
-            excelcells.Value2 = Convert.ToDouble(textBox24.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox25.Text);
 
             excelsheets = excelappworkbook.Worksheets;
             excelworksheet = (Excel.Worksheet)excelsheets.get_Item(5);
             excelcells = excelworksheet.get_Range("A8");
             excelcells.Value2 = "по адресу: " + label113.Text;
             excelcells = excelworksheet.get_Range("G12");
-            excelcells.Value2 = Convert.ToDouble(textBox2.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox70.Text);
             excelcells = excelworksheet.get_Range("G23");
-            excelcells.Value2 = Convert.ToDouble(textBox3.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox69.Text);
             excelcells = excelworksheet.get_Range("G21");
-            excelcells.Value2 = Convert.ToDouble(textBox4.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox68.Text);
             excelcells = excelworksheet.get_Range("G25");
-            excelcells.Value2 = Convert.ToDouble(textBox5.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox67.Text);
             excelcells = excelworksheet.get_Range("I18");
-            excelcells.Value2 = Convert.ToDouble(textBox6.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox66.Text);
+            excelcells = excelworksheet.get_Range("G11");
+            excelcells.Value2 = Convert.ToDouble(textBox65.Text);
             excelcells = excelworksheet.get_Range("I17");
-            excelcells.Value2 = Convert.ToDouble(textBox9.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox63.Text);
             excelcells = excelworksheet.get_Range("I16");
-            excelcells.Value2 = Convert.ToDouble(textBox8.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox64.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I14");
-            excelcells.Value2 = Convert.ToDouble(textBox11.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox61.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I15");
-            excelcells.Value2 = Convert.ToDouble(textBox10.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox62.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I13");
-            excelcells.Value2 = Convert.ToDouble(textBox24.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox48.Text);
 
             excelsheets = excelappworkbook.Worksheets;
             excelworksheet = (Excel.Worksheet)excelsheets.get_Item(6);
             excelcells = excelworksheet.get_Range("A8");
             excelcells.Value2 = "по адресу: " + label113.Text;
             excelcells = excelworksheet.get_Range("G12");
-            excelcells.Value2 = Convert.ToDouble(textBox2.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox93.Text);
             excelcells = excelworksheet.get_Range("G23");
-            excelcells.Value2 = Convert.ToDouble(textBox3.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox92.Text);
             excelcells = excelworksheet.get_Range("G21");
-            excelcells.Value2 = Convert.ToDouble(textBox4.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox91.Text);
             excelcells = excelworksheet.get_Range("G25");
-            excelcells.Value2 = Convert.ToDouble(textBox5.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox90.Text);
             excelcells = excelworksheet.get_Range("I18");
-            excelcells.Value2 = Convert.ToDouble(textBox6.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox89.Text);
+            excelcells = excelworksheet.get_Range("G11");
+            excelcells.Value2 = Convert.ToDouble(textBox88.Text);
             excelcells = excelworksheet.get_Range("I17");
-            excelcells.Value2 = Convert.ToDouble(textBox9.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox86.Text);
             excelcells = excelworksheet.get_Range("I16");
-            excelcells.Value2 = Convert.ToDouble(textBox8.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox87.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I14");
-            excelcells.Value2 = Convert.ToDouble(textBox11.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox84.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I15");
-            excelcells.Value2 = Convert.ToDouble(textBox10.Text) * 0.01;
+            excelcells.Value2 = Convert.ToDouble(textBox85.Text) * 0.01;
             excelcells = excelworksheet.get_Range("I13");
-            excelcells.Value2 = Convert.ToDouble(textBox24.Text);
+            excelcells.Value2 = Convert.ToDouble(textBox71.Text);
         }
 
         private double normTime4, poverca4, rentab4, kofNalog4, kofRashod4, mater4, kofOtchisl4, kofstrahVznos4, kofPrem4, kofZatrat4, vsegosNalog4,
@@ -792,6 +800,7 @@ namespace Contracts
        nakladn4, vsego4, itogOdnpot5;
         private void button6_Click(object sender, EventArgs e)
         {
+            numericUpDown3.Text = 1.ToString();
             id = Int32.Parse(IDContracts.Text);
             normTime4 = Convert.ToDouble(textBox116.Text);
             poverca4 = Convert.ToDouble(textBox115.Text);
@@ -833,6 +842,7 @@ namespace Contracts
             int kol4 = 1;
             itogOdnpot5 = vsegosNalog4 * kol4;
             label123.Text = "Сумма = " + vsegosNalog4 + " * " + kol4 + " = " + itogOdnpot5;
+            label111.Text = "Итог = " + itogOdnpot5;
 
             connect.UpdateFromSum(itogOdnpot5.ToString(), id);
         }

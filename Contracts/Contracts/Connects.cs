@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Windows.Forms;
 using Contracts.Objects;
 using Npgsql;
@@ -1903,5 +1904,43 @@ namespace Contracts
             }
         }
         #endregion 
+
+        #region MaterialsDBF
+        public List<Material> Materials = new List<Material>();
+
+        public void ShowFieldsMaerial()
+        {
+            string FilePath = "\\\\Boris\\d\\Smeta\\";
+            string DBF_FileName = "Material.dbf";
+          /*  OdbcConnection obdcconn = new System.Data.Odbc.OdbcConnection();
+            obdcconn.ConnectionString = "Driver={Microsoft dBase Driver (*.dbf)};SourceType=DBF;SourceDB=" + FilePath + ";Exclusive=No; NULL=NO;DELETED=NO;BACKGROUNDFETCH=NO;";
+            obdcconn.Open();
+            OdbcCommand oCmd = obdcconn.CreateCommand();
+            oCmd.CommandText = "SELECT * FROM " + FilePath + DBF_FileName;
+
+            DataTable dt1 = new DataTable();
+            //  dt1.Load(oCmd.ExecuteReader());
+            dataGridView3.Rows.Add(oCmd.ExecuteReader());
+            obdcconn.Close();
+
+            dataGridView3.DataSource = dt1;*/
+
+            //Выводим значение на экран
+            using (OdbcConnection obdcconn = new OdbcConnection("Driver={Microsoft dBase Driver (*.dbf)};SourceType=DBF;SourceDB=" + FilePath + ";Exclusive=No; NULL=NO;DELETED=NO;BACKGROUNDFETCH=NO;"))
+            {
+                  obdcconn.Open();
+                 OdbcCommand oCmd = obdcconn.CreateCommand();
+                   oCmd.CommandText = "SELECT * FROM " + FilePath + DBF_FileName;
+                   using (OdbcDataReader reader = oCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Materials.Add(new Material(reader[0].ToString(), reader[1].ToString(), Convert.ToDouble(reader[2]), Convert.ToDouble(reader[3])));
+                    }
+                }
+                   obdcconn.Close();
+            }
+        }
+#endregion
     }
 }

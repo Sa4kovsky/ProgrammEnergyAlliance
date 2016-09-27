@@ -245,6 +245,7 @@ namespace Contracts
             Delete.Enabled = true;
             button4.Enabled = true;
             button6.Enabled = true;
+            button9.Enabled = true;
         }
 
         FormExecutor formExecutor = new FormExecutor();
@@ -317,7 +318,7 @@ namespace Contracts
                 if (row.Cells[16].Value != null)
                     textBox13.Text = row.Cells[16].Value.ToString();
                 if (row.Cells[17].Value != null)
-                    comboBox5.Text = row.Cells[17].Value.ToString();
+                    comboBox5.Text = row.Cells[17].Value.ToString(); 
                 if (row.Cells[18].Value != null)
                     comboBox7.Text = row.Cells[18].Value.ToString();
                 if (row.Cells[19].Value != null)
@@ -1051,7 +1052,7 @@ namespace Contracts
                     oDoc.Bookmarks["ПроцентАванса"].Range.Text = textBox13.Text;
                 }
                 else { oDoc.Bookmarks["ПроцентАванса"].Range.Text = ""; }
-                if (textBox13.Text.Contains(","))
+                if (avans.ToString().Contains(","))
                 {
                     oDoc.Bookmarks["АвансСуммаБуква"].Range.Text = vall + " " + copp;
                 }
@@ -1250,6 +1251,26 @@ namespace Contracts
             catch
             {
             }
+        }
+
+        Acct acctForm = new Acct();
+        private void button9_Click(object sender, EventArgs e)
+        {
+            acctForm.nameCustom.Text = comboBox5.Text;
+            acctForm.adrress.Text = textBox10.Text;
+            acctForm.unp.Text = textBox27.Text;
+            acctForm.rs.Text = textBox25.Text;
+            acctForm.nameBank.Text = textBox24.Text;
+            acctForm.mfo.Text = textBox26.Text;
+            acctForm.positionE.Text = textBox4.Text;
+            acctForm.nameE.Text = comboBox2.Text;
+            acctForm.positionC.Text = comboBox8.Text;
+            acctForm.nameC.Text = comboBox7.Text;
+            acctForm.nameWork.Text = comboBox4.Text;
+            acctForm.adrressWorks.Text = textBox23.Text;
+            acctForm.labelNumberData.Text = textBox1.Text +"" + comboBox1.Text+ " от " + textBox9.Text;
+            acctForm.ShowDialog();
+          
         }
     }
 }

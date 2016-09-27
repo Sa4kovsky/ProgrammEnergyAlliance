@@ -17,3 +17,4 @@ E:\Заказ\GomelEnergyAlliance\Contracts\Contracts\obj\Debug\Contracts.FormBa
 E:\Заказ\GomelEnergyAlliance\Contracts\Contracts\obj\Debug\Contracts.ScoreForm.resources
 E:\Заказ\GomelEnergyAlliance\Contracts\Contracts\obj\Debug\Contracts.FormDevicesAccounting.resources
 E:\Заказ\GomelEnergyAlliance\Contracts\Contracts\obj\Debug\Contracts.FormEquipment.resources
+E:\Заказ\GomelEnergyAlliance\Contracts\Contracts\obj\Debug\Contracts.Acct.resources
