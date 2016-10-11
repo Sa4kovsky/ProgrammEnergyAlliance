@@ -1910,7 +1910,10 @@ namespace Contracts
 
         public void ShowFieldsMaerial()
         {
-            string FilePath = "\\\\Boris\\d\\Smeta\\";
+            /*string FilePath = "\\\\Boris\\d\\Smeta\\";
+            string DBF_FileName = "Material.dbf";*/
+
+            string FilePath = "e:\\Заказ\\GomelEnergyAlliance\\";
             string DBF_FileName = "Material.dbf";
           /*  OdbcConnection obdcconn = new System.Data.Odbc.OdbcConnection();
             obdcconn.ConnectionString = "Driver={Microsoft dBase Driver (*.dbf)};SourceType=DBF;SourceDB=" + FilePath + ";Exclusive=No; NULL=NO;DELETED=NO;BACKGROUNDFETCH=NO;";

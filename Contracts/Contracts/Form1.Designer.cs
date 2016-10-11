@@ -199,7 +199,7 @@
             this.услугиНакToolStripMenuItem,
             this.cантехникаToolStripMenuItem});
             this.wORDToolStripMenuItem.Name = "wORDToolStripMenuItem";
-            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.wORDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wORDToolStripMenuItem.Text = "Word";
             // 
             // оказанияУслугToolStripMenuItem
